@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # DNS tunnel benchmark: DNSTT, MasterDNS and Soar through rate-limited local
 # resolvers, with and without the smart resolver pool (common/dnspool, built on
-# github.com/hiddify/hmrd_multi_resolver_dns). Everything runs on the loopback:
+# github.com/bobthebuilder1234232243/donutvpn-hmrd_multi_resolver_dns). Everything runs on the loopback:
 # no internet, no root. See README.md next to this script.
 #
 #   QUICK=1 test/dnstunnel-bench/run.sh          # a check that the pool works, about 2 minutes
@@ -163,9 +163,9 @@ build() {
 	(cd "$ROOT/replace/soar" && go build -o "$WORK/soar-server" ./cmd/soar-server)
 	# the hmrd and VayDNS versions sing-box is built with
 	local hmrd vay
-	hmrd=$(cd "$ROOT" && go list -m -f '{{.Version}}' github.com/hiddify/hmrd_multi_resolver_dns)
+	hmrd=$(cd "$ROOT" && go list -m -f '{{.Version}}' github.com/bobthebuilder1234232243/donutvpn-hmrd_multi_resolver_dns)
 	vay=$(cd "$ROOT" && go list -m -f '{{if .Replace}}{{.Replace.Path}}@{{.Replace.Version}}{{else}}{{.Path}}@{{.Version}}{{end}}' github.com/net2share/vaydns)
-	GOBIN="$WORK" go install "github.com/hiddify/hmrd_multi_resolver_dns/cmd/hmrdbench@$hmrd"
+	GOBIN="$WORK" go install "github.com/bobthebuilder1234232243/donutvpn-hmrd_multi_resolver_dns/cmd/hmrdbench@$hmrd"
 	mkdir -p "$WORK/vaybuild"
 	cat >"$WORK/vaybuild/go.mod" <<EOF
 module vaybuild

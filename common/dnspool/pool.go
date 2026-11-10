@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	multidns "github.com/hiddify/hmrd_multi_resolver_dns"
+	multidns "github.com/bobthebuilder1234232243/donutvpn-hmrd_multi_resolver_dns"
 	"github.com/sagernet/sing-box/common/dialer"
 	"github.com/sagernet/sing-box/log"
 	"github.com/sagernet/sing-box/option"

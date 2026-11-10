@@ -1,6 +1,6 @@
 // Package dnspool is what the DNS tunnel outbounds share: the built-in list of public resolvers,
 // the saved score of each resolver, a plain DNS probe that tells whether a resolver answers, and
-// the resolver pool (github.com/hiddify/hmrd_multi_resolver_dns) each outbound runs for itself
+// the resolver pool (github.com/bobthebuilder1234232243/donutvpn-hmrd_multi_resolver_dns) each outbound runs for itself
 // to spread its queries over many resolvers. The dnstt, masterdns and soar outbounds are built on it,
 // so every DNS tunnel has the same resolver handling and the same smart_pool options.
 package dnspool

@@ -191,7 +191,7 @@ resolverهایی که کار می‌کنند جاری نگه می‌دارد.
   روی loopback از اجرایی به اجرای دیگر حدود یک پنجم فرق می‌کنند، پس فاصله‌های کوچک‌تر جدول تفاوت
   نیستند. جدول کامل، با آپلود و نرخ پرسش، از اجرای همین اسکریپت به دست می‌آید؛ بنچمارک خود مجموعه،
   بدون تونل، `go run ./cmd/hmrdbench bench` در
-  [hmrd_multi_resolver_dns](https://github.com/hiddify/hmrd_multi_resolver_dns) است.
+  [hmrd_multi_resolver_dns](https://github.com/bobthebuilder1234232243/donutvpn-hmrd_multi_resolver_dns) است.
 - مجموعه فقط روی 127.0.0.1 و روی درگاهی که در شروع انتخاب می‌شود گوش می‌دهد و با خروجی بسته
   می‌شود.
 

@@ -195,7 +195,7 @@ The resolvers themselves are the outbound's `resolvers`: `host:port` or `host` f
   Results on the loopback vary by about a fifth between runs, so the table's smaller gaps are not
   differences. The full table, with uploads and query rates, comes from running the script; the
   pool's own benchmark, without a tunnel, is `go run ./cmd/hmrdbench bench` in
-  [hmrd_multi_resolver_dns](https://github.com/hiddify/hmrd_multi_resolver_dns).
+  [hmrd_multi_resolver_dns](https://github.com/bobthebuilder1234232243/donutvpn-hmrd_multi_resolver_dns).
 - The pool listens on 127.0.0.1 only, on a port chosen at start, and closes with the outbound.
 
 ## See also

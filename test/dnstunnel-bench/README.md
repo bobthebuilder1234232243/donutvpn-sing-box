@@ -110,4 +110,4 @@ limit run one after another, being bound by the machine), `BASE_PORT` (27100), `
 new temporary directory; its logs, binaries and row cache stay there).
 
 The library itself has a benchmark that needs no tunnel: `go run ./cmd/hmrdbench bench` in
-[hmrd_multi_resolver_dns](https://github.com/hiddify/hmrd_multi_resolver_dns).
+[hmrd_multi_resolver_dns](https://github.com/bobthebuilder1234232243/donutvpn-hmrd_multi_resolver_dns).
