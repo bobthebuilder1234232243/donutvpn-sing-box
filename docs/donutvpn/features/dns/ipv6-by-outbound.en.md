@@ -1,6 +1,6 @@
 # IPv6 by outbound
 
-[فارسی](ipv6-by-outbound.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](ipv6-by-outbound.fa.md) · [All DonutVpn features](../../index.md)
 
 Gives the apps IPv6 only through an outbound that carries it, and never lets them see an IPv6
 connection die. The monitoring learns, for every outbound, whether its exit carries IPv6: from
@@ -16,7 +16,7 @@ inside the connection, an IPv6 connection that an outbound not yet known turns o
 - Google, YouTube and most large sites are IPv6-first: a browser that gets an AAAA answer
   connects over IPv6. Through a proxy without IPv6 the proxy accepts the connection and then
   closes it, which Chrome shows as "unexpectedly closed the connection" (`ERR_CONNECTION_CLOSED`)
-  and never retries over IPv4, while apps that use IPv4 work (hiddify-app #2307, #2420). A reset
+  and never retries over IPv4, while apps that use IPv4 work (donutvpn-app #2307, #2420). A reset
   at that point is no better: an app falls back only when the connect itself fails, and through
   a TUN the connect succeeds locally before the proxy has tried anything.
 - With this, a proxy that carries IPv6 gives IPv6, a proxy that does not is never asked for it,
@@ -105,7 +105,7 @@ It does not; it keeps a working proxy from looking broken.
 
 ## Notes
 
-- hiddify-core turns all of this on when the IPv6 mode gives the apps IPv6 at all ("on, IPv4
+- donutvpn-core turns all of this on when the IPv6 mode gives the apps IPv6 at all ("on, IPv4
   first" or "on, IPv6 first"); the default, IPv4 only, answers the apps with `ipv4_only` and
   refuses every IPv6 destination before the sniff rule, with nothing to verify or carry over.
 - The verification is one more request per outbound per run to the test URL the user already

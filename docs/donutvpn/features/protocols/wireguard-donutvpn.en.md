@@ -1,11 +1,11 @@
-# WireGuard: Hiddify additions
+# WireGuard: DonutVpn additions
 
-[فارسی](wireguard-hiddify.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](wireguard-donutvpn.fa.md) · [All DonutVpn features](../../index.md)
 
-Hiddify adds a few things to the upstream WireGuard endpoint (`"type": "wireguard"`): fake
+DonutVpn adds a few things to the upstream WireGuard endpoint (`"type": "wireguard"`): fake
 "noise" packets before each handshake, a user name per peer, automatic recovery when the UDP
 socket stops working, and UDP fragmentation turned on by default. Everything else in the endpoint
-works as in upstream sing-box and is documented there. This page covers only the Hiddify parts.
+works as in upstream sing-box and is documented there. This page covers only the DonutVpn parts.
 
 ## Why use it
 
@@ -64,9 +64,9 @@ WireGuard accepts a packet from a peer only when its source address is in that p
 `name`, connections from its addresses get that user name, the same as a user of a VLESS or Trojan
 inbound. When `allowed_ips` of named peers overlap, the most specific prefix wins.
 
-### Recovery (Hiddify's wireguard-go)
+### Recovery (DonutVpn's wireguard-go)
 
-The endpoint runs on Hiddify's copy of wireguard-go (`replace/wireguard-go`), which adds:
+The endpoint runs on DonutVpn's copy of wireguard-go (`replace/wireguard-go`), which adds:
 
 - **New port after failed handshakes.** A handshake that keeps failing from the same socket rarely
   recovers. After 3 unanswered initiations (about 15 seconds) while the peer has no valid session,
@@ -90,7 +90,7 @@ larger packets. With `fallback_address`, when packets went out but no handshake 
 seconds, the endpoint sends to the next address, and so on in turn; an idle endpoint is left
 alone. When the path changes (the detour's connection is made again, the network changes), it
 starts again from the peer's own address, the preferred one. It works with or without a
-`detour`. hiddify-core puts an IPv6 WARP exit hop on an IPv4 address and keeps the IPv6 one here.
+`detour`. donutvpn-core puts an IPv6 WARP exit hop on an IPv4 address and keeps the IPv6 one here.
 
 ### UDP fragmentation
 

@@ -7,7 +7,7 @@ import (
 	"io"
 	"time"
 
-	"github.com/sagernet/sing-box/hiddify/ipinfo"
+	"github.com/sagernet/sing-box/donutvpn/ipinfo"
 	E "github.com/sagernet/sing/common/exceptions"
 	"github.com/sagernet/sing/common/observable"
 	"github.com/sagernet/sing/common/varbin"

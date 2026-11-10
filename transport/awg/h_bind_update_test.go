@@ -94,7 +94,7 @@ func (d hDestinationDialer) ListenPacket(ctx context.Context, destination M.Sock
 	return d.hAnyDialer.ListenPacket(ctx, destination)
 }
 
-// hiddify-app#2478: the only peer is given by a domain, resolved after the start. Before it is,
+// donutvpn-app#2478: the only peer is given by a domain, resolved after the start. Before it is,
 // the device starts without a connection (the any-address ones fail on such a detour), and it
 // connects to the address SetPeerEndpoint sets, at once.
 func TestH_PendingPeerSetLater(t *testing.T) {

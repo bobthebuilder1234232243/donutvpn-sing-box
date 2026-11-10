@@ -76,7 +76,7 @@ func (rb *RelayBridge) SetUDPAcceptHandler(fn func(conn net.Conn, destination st
 }
 
 // InheritHandlers gives this bridge the accept handlers of the one it replaces after a
-// reconnect. Hiddify: without them a creator bridge dialed each destination itself, past the
+// reconnect. DonutVpn: without them a creator bridge dialed each destination itself, past the
 // router and its route rules.
 func (rb *RelayBridge) InheritHandlers(previous *RelayBridge) {
 	if previous == nil {

@@ -1,11 +1,11 @@
 # DNS group
 
-[فارسی](dns-group.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](dns-group.fa.md) · [All DonutVpn features](../../index.md)
 
 A DNS group asks several DNS servers for one query and returns the best answer. It can drop
 answers that point into blocked ranges, so a poisoned reply from a filtered resolver does not
 win. It is a DNS server: `"type": "group"` in the `dns.servers` list. Upstream sing-box has the
-group type; Hiddify adds `mode`, `ignore_ranges`, `error_ttl`, `win_ttl` and `member_timeout`, and keeps the
+group type; DonutVpn adds `mode`, `ignore_ranges`, `error_ttl`, `win_ttl` and `member_timeout`, and keeps the
 older `multi` type as an alias.
 
 ## Why use it

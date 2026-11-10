@@ -53,7 +53,7 @@ type Bridge struct {
 	peers        map[string]string
 	readBuf      int
 	activeBridge *tunnel.RelayBridge
-	bridgeAccess sync.Mutex // Hiddify: activeBridge is polled by ConnectCreator and replaced on reconnect
+	bridgeAccess sync.Mutex // DonutVpn: activeBridge is polled by ConnectCreator and replaced on reconnect
 	selfName     string
 	dialer       N.Dialer
 	logger       logger.ContextLogger
@@ -746,7 +746,7 @@ func (b *Bridge) initRelay() {
 		if previous != nil {
 			previous.Reset()
 		}
-		next.InheritHandlers(previous) // Hiddify: keep routing after a reconnect
+		next.InheritHandlers(previous) // DonutVpn: keep routing after a reconnect
 		next.SetOnPeerConfig(func(fps, batch, trackCount int) {
 			if trackCount >= 2 {
 				b.enableScreenshare()

@@ -52,7 +52,7 @@ func ConnectCreator(ctx context.Context, cookieStr, joinLink string, readBuf int
 			}
 			rb := tunnel.NewRelayBridge(tun, "creator", bridgeReadBuf, dialer, logger)
 			bridge.mu.Lock()
-			rb.InheritHandlers(bridge.activeBridge) // Hiddify: keep routing after a reconnect
+			rb.InheritHandlers(bridge.activeBridge) // DonutVpn: keep routing after a reconnect
 			bridge.mu.Unlock()
 			rb.MarkReady()
 			if st, ok := tun.(*rtc.SymmetricScreenTunnel); ok {

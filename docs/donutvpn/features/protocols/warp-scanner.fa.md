@@ -80,7 +80,7 @@ noise در endpointهای `wireguard` و `warp` (`noise.fake_packet`) پیش ا�
 تبدیل می‌شوند؛ `quic` به بسته‌های `<qi www.google.com>` تبدیل می‌شود. حالت `awg` بدون تنظیم‌های `awg` از
 `dns-google` استفاده می‌کند.
 
-این پیش‌تنظیم‌ها فقط برای WARP نیستند: هر endpoint از نوع [WireGuard](wireguard-hiddify.fa.md) یکی از آن‌ها را
+این پیش‌تنظیم‌ها فقط برای WARP نیستند: هر endpoint از نوع [WireGuard](wireguard-donutvpn.fa.md) یکی از آن‌ها را
 به‌عنوان `mode` نویز می‌گیرد (`"mode": "sip"`) و هر endpoint از نوع [AmneziaWG](amneziawg.fa.md) به‌عنوان `ip`
 (`"ip": "sip"`). `dns` و `random` نام کوتاه `dns-google` و `xray-random` هستند.
 
@@ -206,7 +206,7 @@ probe همیشه همان چیزی را می‌فرستد که تونل می‌�
 
 - [WARP](warp.fa.md)
 - [WARP روی MASQUE](warp-masque.fa.md)
-- [WireGuard: افزوده‌های هیدیفای](wireguard-hiddify.fa.md)
+- [WireGuard: افزوده‌های هیدیفای](wireguard-donutvpn.fa.md)
 - [AmneziaWG](amneziawg.fa.md)
 
 </div>

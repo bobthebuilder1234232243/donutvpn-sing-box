@@ -9,7 +9,7 @@ import (
 
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/common/cloudflare"
-	"github.com/sagernet/sing-box/hiddify/warpscan"
+	"github.com/sagernet/sing-box/donutvpn/warpscan"
 	"github.com/sagernet/sing-box/option"
 	"github.com/sagernet/sing-box/protocol/masque"
 	E "github.com/sagernet/sing/common/exceptions"

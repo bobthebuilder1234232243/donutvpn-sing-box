@@ -11,7 +11,7 @@
 
 - [تکه‌تکه کردن TLS](features/tls-fragment.fa.md): ClientHello را با مکث به تکه‌های کوچک تقسیم می‌کند تا DPI نتواند نام سرور را بخواند.
 - [ترفندهای TLS](features/tls-tricks.fa.md): نام سرور با حروف بزرگ و کوچک درهم و یک افزونهٔ padding در ClientHello.
-- [REALITY در هیدیفای](features/reality-hiddify.fa.md): key share پساکوانتومی، گزینهٔ `key_share` و تکه‌تکه کردن روی REALITY.
+- [REALITY در هیدیفای](features/reality-donutvpn.fa.md): key share پساکوانتومی، گزینهٔ `key_share` و تکه‌تکه کردن روی REALITY.
 - [پروتکل PROXY](features/proxy-protocol.fa.md): ورودی‌ها هدر PROXY protocol را می‌خوانند و خروجی direct آن را می‌فرستد.
 
 ## پروتکل‌ها
@@ -20,7 +20,7 @@
 - [اسکنر و noise در WARP](features/protocols/warp-scanner.fa.md): اسکنر endpoint، حالت‌ها و پیش‌تنظیم‌های noise (DNS، QUIC، SIP، تصادفی)، جست‌وجوی noise و حالت auto چطور راهی برای عبور پیدا می‌کنند.
 - [WARP روی MASQUE](features/protocols/warp-masque.fa.md): outbound مستقل `masque` برای WARP روی HTTP/3، HTTP/2 یا هر دو، با دستگاهی که جای دیگری ثبت شده؛ برای ثبت دستگاه، endpoint ‏`warp` با `mode` برابر `masque` را به کار ببرید؛ برای سرور MASQUE شخصی، از `masque-client` در sing-box اصلی استفاده کنید.
 - [AmneziaWG](features/protocols/amneziawg.fa.md): WireGuard با بسته‌های بی‌معنی، handshakeهای padding‌دار و نوع پیام‌های دلخواه که شناسایی WireGuard را خنثی می‌کنند.
-- [WireGuard: افزوده‌های هیدیفای](features/protocols/wireguard-hiddify.fa.md): بسته‌های نویز پیش از handshake، نام کاربر برای هر peer، بازیابی سوکت و تکه‌تکه کردن UDP که به‌طور پیش‌فرض روشن است.
+- [WireGuard: افزوده‌های هیدیفای](features/protocols/wireguard-donutvpn.fa.md): بسته‌های نویز پیش از handshake، نام کاربر برای هر peer، بازیابی سوکت و تکه‌تکه کردن UDP که به‌طور پیش‌فرض روشن است.
 - [خروجی WireGuard (قالب قدیمی)](features/protocols/wireguard-legacy.fa.md): خروجی قدیمی WireGuard که sing-box اصلی حذفش کرد، نگه داشته شده تا کانفیگ‌های قدیمی هنوز بارگذاری شوند.
 - [رمزگذاری VLESS](features/protocols/vless-encryption.fa.md): رمزگذاری پساکوانتومی VLESS از Xray، با Vision روی آن حتی بدون TLS.
 - [Sudoku](features/protocols/sudoku.fa.md): یک پراکسی رمزشدهٔ TCP که بایت‌هایش را به شکل سرنخ‌های سودوکو می‌فرستد تا ترافیک شبیه متن باشد یا تصادفی بودن کمی داشته باشد، با تونل‌های HTTP اختیاری (build tag `with_sudoku`).
@@ -66,7 +66,7 @@
 
 ## برای توسعه‌دهندگان اپ
 
-- [ملاحظات اپ](app_considerations.md) (انگلیسی): آنچه hiddify-app و hiddify-core به‌خاطر کارهای v5 باید تغییر دهند یا بدانند.
+- [ملاحظات اپ](app_considerations.md) (انگلیسی): آنچه donutvpn-app و donutvpn-core به‌خاطر کارهای v5 باید تغییر دهند یا بدانند.
 
 ## رفع اشکال‌ها
 

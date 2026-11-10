@@ -1,6 +1,6 @@
 # mKCP transport
 
-[فارسی](kcp.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](kcp.fa.md) · [All DonutVpn features](../../index.md)
 
 mKCP carries a proxy protocol (VLESS, VMess, Trojan…) over UDP with KCP, a reliable protocol
 that resends lost packets fast. It is the V2Ray transport `"type": "mkcp"` (or `"kcp"`) of an
@@ -62,7 +62,7 @@ The fields and defaults are Xray 26's `kcpSettings`. Tested in both directions a
 26.10.21 and 26.3.27, plain and with the `aes128gcm` and `wechat` masks. Xray 26.3 names these
 masks `mkcp-aes128gcm` and `header-wechat`; they are the same on the wire.
 
-Inbounds do not take finalmask, so a Hiddify mKCP server works only without masks.
+Inbounds do not take finalmask, so a DonutVpn mKCP server works only without masks.
 
 ## See also
 

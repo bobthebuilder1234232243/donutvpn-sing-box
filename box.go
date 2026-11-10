@@ -31,7 +31,7 @@ import (
 	"github.com/sagernet/sing-box/log"
 	"github.com/sagernet/sing-box/option"
 	"github.com/sagernet/sing-box/protocol/direct"
-	"github.com/sagernet/sing-box/protocol/hiddify/hinvalid"
+	"github.com/sagernet/sing-box/protocol/donutvpn/hinvalid"
 	"github.com/sagernet/sing-box/route"
 	"github.com/sagernet/sing/common"
 	E "github.com/sagernet/sing/common/exceptions"
@@ -263,7 +263,7 @@ func New(options Options) (*Box, error) {
 		service.MustRegisterPtr(ctx, clashMode)
 		internalServices = append(internalServices, clashMode)
 	}
-	if needClashAPI { //H the hiddify clash server keeps its own per-outbound traffic manager
+	if needClashAPI { //H the donutvpn clash server keeps its own per-outbound traffic manager
 		service.MustRegisterPtr(ctx, clashtrafficontrol.NewManager())
 	}
 	referenceManager := route.NewReferenceManager(ctx, logFactory.NewLogger("reference"), options.Options)

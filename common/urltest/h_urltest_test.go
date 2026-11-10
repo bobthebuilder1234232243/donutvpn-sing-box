@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/sagernet/sing-box/adapter"
-	"github.com/sagernet/sing-box/hiddify/ipinfo"
+	"github.com/sagernet/sing-box/donutvpn/ipinfo"
 	M "github.com/sagernet/sing/common/metadata"
 	"github.com/sagernet/sing/common/observable"
 

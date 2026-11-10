@@ -10,7 +10,7 @@ import (
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/common/dialer"
 	C "github.com/sagernet/sing-box/constant"
-	"github.com/sagernet/sing-box/hiddify/secret"
+	"github.com/sagernet/sing-box/donutvpn/secret"
 	"github.com/sagernet/sing-box/log"
 	"github.com/sagernet/sing-box/option"
 	"github.com/sagernet/sing/common/control"
@@ -227,9 +227,9 @@ func TestH_PsiphonBuildConfigBase64Variants(t *testing.T) {
 
 // embedded config and key are package-level build-time values: these tests must not run in parallel
 func hWithEmbedded(t *testing.T, key, config string) {
-	oldKey, oldConfig := secret.Key, embeddedHiddifyConfig
-	secret.Key, embeddedHiddifyConfig = key, config
-	t.Cleanup(func() { secret.Key, embeddedHiddifyConfig = oldKey, oldConfig })
+	oldKey, oldConfig := secret.Key, embeddedDonutVpnConfig
+	secret.Key, embeddedDonutVpnConfig = key, config
+	t.Cleanup(func() { secret.Key, embeddedDonutVpnConfig = oldKey, oldConfig })
 }
 
 func hTestKey(t *testing.T) string {
@@ -253,21 +253,21 @@ func TestH_PsiphonEncryptedConfig(t *testing.T) {
 	require.Equal(t, "encrypted-parameters", config.AdditionalParameters)
 }
 
-func TestH_PsiphonHiddifyConfig(t *testing.T) {
+func TestH_PsiphonDonutVpnConfig(t *testing.T) {
 	key := hTestKey(t)
 	encrypted, err := secret.Encrypt(key, []byte(hTestPartnerConfig))
 	require.NoError(t, err)
 	hWithEmbedded(t, key, encrypted)
 
-	config, err := buildConfig(option.PsiphonOutboundOptions{Config: "hiddify", EgressRegion: "DE"}, defaultEstablishTunnelTimeout, "psiphon")
+	config, err := buildConfig(option.PsiphonOutboundOptions{Config: "donutvpn", EgressRegion: "DE"}, defaultEstablishTunnelTimeout, "psiphon")
 	require.NoError(t, err)
-	require.Equal(t, "BBBBBBBBBBBBBBBB", config.SponsorId, "config hiddify uses the embedded config")
+	require.Equal(t, "BBBBBBBBBBBBBBBB", config.SponsorId, "config donutvpn uses the embedded config")
 	require.Equal(t, "DE", config.EgressRegion)
 }
 
-func TestH_PsiphonHiddifyConfigNotEmbedded(t *testing.T) {
+func TestH_PsiphonDonutVpnConfigNotEmbedded(t *testing.T) {
 	hWithEmbedded(t, "", "")
-	config, err := buildConfig(option.PsiphonOutboundOptions{Config: "hiddify"}, defaultEstablishTunnelTimeout, "psiphon")
+	config, err := buildConfig(option.PsiphonOutboundOptions{Config: "donutvpn"}, defaultEstablishTunnelTimeout, "psiphon")
 	require.NoError(t, err, "builds without the secret fall back to the defaults")
 	require.Equal(t, defaultSponsorID, config.SponsorId)
 }

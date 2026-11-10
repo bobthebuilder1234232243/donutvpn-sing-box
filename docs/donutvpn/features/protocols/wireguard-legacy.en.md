@@ -1,9 +1,9 @@
 # WireGuard outbound (legacy format)
 
-[فارسی](wireguard-legacy.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](wireguard-legacy.fa.md) · [All DonutVpn features](../../index.md)
 
 Upstream sing-box removed the WireGuard outbound in version 1.13; WireGuard is now an endpoint.
-Hiddify brings the outbound back under a new type name, so configs written in the old format keep
+DonutVpn brings the outbound back under a new type name, so configs written in the old format keep
 working. It is an outbound: `"type": "wireguard_legacy"` in the `outbounds` list. The fields are
 those of the old `wireguard` outbound.
 
@@ -12,13 +12,13 @@ those of the old `wireguard` outbound.
 - You have a config or a converter that writes the old WireGuard outbound, and you do not want to
   rewrite it as an endpoint.
 
-For new configs, use the [WireGuard endpoint](wireguard-hiddify.en.md). It has the Hiddify
+For new configs, use the [WireGuard endpoint](wireguard-donutvpn.en.md). It has the DonutVpn
 additions (noise packets, recovery, peer names), and this outbound does not.
 
 ## How it gets past filtering
 
 It does not. It is plain WireGuard, which a filter can recognize by its handshake. For
-obfuscation, use the [WireGuard endpoint](wireguard-hiddify.en.md) with noise, or
+obfuscation, use the [WireGuard endpoint](wireguard-donutvpn.en.md) with noise, or
 [AmneziaWG](amneziawg.en.md).
 
 ## How it works
@@ -73,6 +73,6 @@ keepalive option, as in upstream's old outbound.
 
 ## See also
 
-- [WireGuard: Hiddify additions](wireguard-hiddify.en.md)
+- [WireGuard: DonutVpn additions](wireguard-donutvpn.en.md)
 - [AmneziaWG](amneziawg.en.md)
 - [WARP](warp.en.md)

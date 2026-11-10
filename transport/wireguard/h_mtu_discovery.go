@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"github.com/sagernet/sing-box/common/interrupt"
-	"github.com/sagernet/sing-box/hiddify/mtusearch"
+	"github.com/sagernet/sing-box/donutvpn/mtusearch"
 	"github.com/sagernet/sing-tun"
 	"github.com/sagernet/sing-tun/gtcpip/header"
 	N "github.com/sagernet/sing/common/network"

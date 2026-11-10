@@ -1,9 +1,9 @@
-# URL test: Hiddify additions
+# URL test: DonutVpn additions
 
-[فارسی](urltest.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](urltest.fa.md) · [All DonutVpn features](../../index.md)
 
 The URL test group (`"type": "urltest"`) tests its members and sends traffic through the fastest.
-Hiddify adds more test URLs, a `failover` mode, and a reaction to failed connections, after
+DonutVpn adds more test URLs, a `failover` mode, and a reaction to failed connections, after
 sing-box-lx.
 
 ## Why use it
@@ -11,7 +11,7 @@ sing-box-lx.
 - One test URL can be blocked on some networks. With several, a working member is not marked
   dead because of it.
 - Upstream reacts only to tests: when the selected member dies, connections fail until the next
-  test, up to `interval` later. Hiddify moves to another member on the first failed connection.
+  test, up to `interval` later. DonutVpn moves to another member on the first failed connection.
 - `failover` keeps one member for as long as it works, so your exit address does not change
   every few minutes, and it tests one member per interval instead of all of them.
 

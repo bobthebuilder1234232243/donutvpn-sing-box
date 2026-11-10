@@ -31,14 +31,14 @@ func hRequireRegistered(t *testing.T, registry hOptionsCreator, expected map[str
 	require.False(t, loaded)
 }
 
-func TestH_InboundRegistryHiddifyTypes(t *testing.T) {
+func TestH_InboundRegistryDonutVpnTypes(t *testing.T) {
 	hRequireRegistered(t, InboundRegistry(), map[string]any{
 		C.TypeMieru:       &option.MieruInboundOptions{},
 		C.TypeTrustTunnel: &option.TrustTunnelInboundOptions{},
 	})
 }
 
-func TestH_OutboundRegistryHiddifyTypes(t *testing.T) {
+func TestH_OutboundRegistryDonutVpnTypes(t *testing.T) {
 	hRequireRegistered(t, OutboundRegistry(), map[string]any{
 		C.TypePsiphon:         &option.PsiphonOutboundOptions{},
 		C.TypeHInvalidConfig:  &option.HInvalidOptions{},
@@ -55,7 +55,7 @@ func TestH_OutboundRegistryHiddifyTypes(t *testing.T) {
 	require.True(t, loaded)
 }
 
-func TestH_EndpointRegistryHiddifyTypes(t *testing.T) {
+func TestH_EndpointRegistryDonutVpnTypes(t *testing.T) {
 	hRequireRegistered(t, EndpointRegistry(), map[string]any{
 		C.TypeTunnelClient: &option.TunnelClientEndpointOptions{},
 		C.TypeTunnelServer: &option.TunnelServerEndpointOptions{},
@@ -66,14 +66,14 @@ func TestH_EndpointRegistryHiddifyTypes(t *testing.T) {
 	})
 }
 
-func TestH_DNSTransportRegistryHiddifyTypes(t *testing.T) {
+func TestH_DNSTransportRegistryDonutVpnTypes(t *testing.T) {
 	hRequireRegistered(t, DNSTransportRegistry(), map[string]any{
 		C.DNSTypeSDNS:  &option.SDNSDNSServerOptions{},
 		C.DNSTypeMulti: &option.MultiDNSServerOptions{},
 	})
 }
 
-func TestH_CertificateProviderRegistryHiddifyTypes(t *testing.T) {
+func TestH_CertificateProviderRegistryDonutVpnTypes(t *testing.T) {
 	hRequireRegistered(t, CertificateProviderRegistry(), map[string]any{
 		C.TypeCloudflareOriginCA: &option.CloudflareOriginCACertificateProviderOptions{},
 	})

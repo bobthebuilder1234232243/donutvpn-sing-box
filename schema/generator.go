@@ -5,7 +5,7 @@ import (
 	"encoding"
 	stdjson "encoding/json"
 	xbadoption "github.com/sagernet/sing-box/common/xray/json/badoption"
-	hiddify "github.com/sagernet/wireguard-go/hiddify"
+	donutvpn "github.com/sagernet/wireguard-go/donutvpn"
 	"net/netip"
 	"reflect"
 	"slices"
@@ -34,8 +34,8 @@ var (
 	memoryBytesType        = reflect.TypeFor[byteformats.MemoryBytes]()
 	networkBytesCompatType = reflect.TypeFor[byteformats.NetworkBytesCompat]()
 	rawMessageType         = reflect.TypeFor[json.RawMessage]()
-	// H: Hiddify ranges, written as a number, "min-max" or {"from", "to"}
-	rangeTypes = []reflect.Type{reflect.TypeFor[hiddify.Range](), reflect.TypeFor[xbadoption.Range]()} //H: any JSON value, such as finalmask settings
+	// H: DonutVpn ranges, written as a number, "min-max" or {"from", "to"}
+	rangeTypes = []reflect.Type{reflect.TypeFor[donutvpn.Range](), reflect.TypeFor[xbadoption.Range]()} //H: any JSON value, such as finalmask settings
 )
 
 type generator struct {

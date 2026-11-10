@@ -84,7 +84,7 @@ func hVerify(pool *x509.CertPool, leaf *x509.Certificate) error {
 
 func TestH_StorePlatformSystemCertificates(t *testing.T) {
 	t.Parallel()
-	ca, caPEM, leaf := hNewCA(t, "hiddify platform test CA")
+	ca, caPEM, leaf := hNewCA(t, "donutvpn platform test CA")
 	store := hNewSystemStore(t, &hPlatformInterface{certificates: []string{caPEM}})
 	require.NotNil(t, store.systemPool)
 	expected := x509.NewCertPool()
@@ -97,8 +97,8 @@ func TestH_StorePlatformSystemCertificates(t *testing.T) {
 
 func TestH_StorePlatformSkipsInvalidPEM(t *testing.T) {
 	t.Parallel()
-	caA, caPEMA, leafA := hNewCA(t, "hiddify platform CA A")
-	caB, caPEMB, leafB := hNewCA(t, "hiddify platform CA B")
+	caA, caPEMA, leafA := hNewCA(t, "donutvpn platform CA A")
+	caB, caPEMB, leafB := hNewCA(t, "donutvpn platform CA B")
 	store := hNewSystemStore(t, &hPlatformInterface{certificates: []string{"not a pem", caPEMA, "", caPEMB}})
 	expected := x509.NewCertPool()
 	expected.AddCert(caA)
@@ -110,7 +110,7 @@ func TestH_StorePlatformSkipsInvalidPEM(t *testing.T) {
 
 func TestH_StorePlatformFallbackToSystemPool(t *testing.T) {
 	t.Parallel()
-	_, _, leaf := hNewCA(t, "hiddify untrusted CA")
+	_, _, leaf := hNewCA(t, "donutvpn untrusted CA")
 	for name, platform := range map[string]adapter.PlatformInterface{
 		"nil-platform": nil,
 		"empty":        &hPlatformInterface{},
@@ -127,7 +127,7 @@ func TestH_StorePlatformFallbackToSystemPool(t *testing.T) {
 
 func TestH_StorePlatformIgnoredForBundledStores(t *testing.T) {
 	t.Parallel()
-	_, caPEM, leaf := hNewCA(t, "hiddify ignored CA")
+	_, caPEM, leaf := hNewCA(t, "donutvpn ignored CA")
 	ctx := service.ContextWith[adapter.PlatformInterface](context.Background(), &hPlatformInterface{certificates: []string{caPEM}})
 	for _, storeType := range []string{C.CertificateStoreMozilla, C.CertificateStoreNone} {
 		store, err := NewStore(ctx, logger.NOP(), option.CertificateOptions{Store: storeType})

@@ -16,7 +16,7 @@ import (
 	"github.com/sagernet/sing-box/common/dialer"
 	"github.com/sagernet/sing-box/common/proxybridge"
 	C "github.com/sagernet/sing-box/constant"
-	"github.com/sagernet/sing-box/hiddify/secret"
+	"github.com/sagernet/sing-box/donutvpn/secret"
 	"github.com/sagernet/sing-box/log"
 	"github.com/sagernet/sing-box/option"
 	E "github.com/sagernet/sing/common/exceptions"
@@ -81,8 +81,8 @@ func NewOutbound(ctx context.Context, _ adapter.Router, logger log.ContextLogger
 	if timeout <= 0 {
 		timeout = defaultEstablishTunnelTimeout
 	}
-	if strings.TrimSpace(options.Config) == hiddifyConfigName && embeddedHiddifyConfig == "" {
-		logger.Warn("this build has no embedded hiddify psiphon config, using the default psiphon config")
+	if strings.TrimSpace(options.Config) == donutvpnConfigName && embeddedDonutVpnConfig == "" {
+		logger.Warn("this build has no embedded donutvpn psiphon config, using the default psiphon config")
 	}
 	config, err := buildConfig(options, timeout, tag)
 	if err != nil {
@@ -207,18 +207,18 @@ func (h *Outbound) Close() error {
 	return nil
 }
 
-// embeddedHiddifyConfig is the app's Psiphon config, encrypted at build time from the
-// CI secret PSIPHON_CONFIG; outbounds use it with config "hiddify".
-var embeddedHiddifyConfig string
+// embeddedDonutVpnConfig is the app's Psiphon config, encrypted at build time from the
+// CI secret PSIPHON_CONFIG; outbounds use it with config "donutvpn".
+var embeddedDonutVpnConfig string
 
-const hiddifyConfigName = "hiddify"
+const donutvpnConfigName = "donutvpn"
 
-// resolveConfig returns the Psiphon config JSON for options.Config: "hiddify" (the embedded app
+// resolveConfig returns the Psiphon config JSON for options.Config: "donutvpn" (the embedded app
 // config), a value encrypted with the build-time key, or plain base64. "{}" means use the defaults.
 func resolveConfig(value string) ([]byte, error) {
 	value = strings.TrimSpace(value)
-	if value == hiddifyConfigName {
-		value = embeddedHiddifyConfig
+	if value == donutvpnConfigName {
+		value = embeddedDonutVpnConfig
 	}
 	if value == "" {
 		return []byte("{}"), nil

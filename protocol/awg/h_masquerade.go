@@ -6,7 +6,7 @@ import (
 
 	"github.com/sagernet/sing-box/option"
 	E "github.com/sagernet/sing/common/exceptions"
-	"github.com/sagernet/wireguard-go/hiddify"
+	"github.com/sagernet/wireguard-go/donutvpn"
 )
 
 // masqueradeDomain is a plain DNS name: the domain is written inside an i-packet tag, so nothing
@@ -15,7 +15,7 @@ var masqueradeDomain = regexp.MustCompile(`^(?i)[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-
 
 // applyMasquerade turns the ip/id/ib masquerade settings into special and junk packets: ip quic
 // is a fresh QUIC Initial for the domain id in i1 before every handshake; any other ip names a
-// noise preset (hiddify.NoisePresets: dns, sip, stun, random, quic-mimic, ...), whose packets fill
+// noise preset (donutvpn.NoisePresets: dns, sip, stun, random, quic-mimic, ...), whose packets fill
 // i1–i5 and whose junk fills jc/jmin/jmax when they are not set.
 func applyMasquerade(awg *option.AwgOptions) error {
 	if awg.IP == "" {
@@ -28,7 +28,7 @@ func applyMasquerade(awg *option.AwgOptions) error {
 		return E.New("awg: ip/id/ib replace i1, set only one of them")
 	}
 	if strings.ToLower(awg.IP) != "quic" {
-		preset, ok := hiddify.NoisePresetByName(awg.IP)
+		preset, ok := donutvpn.NoisePresetByName(awg.IP)
 		if !ok {
 			return E.New("awg: unknown masquerade protocol: ", awg.IP)
 		}

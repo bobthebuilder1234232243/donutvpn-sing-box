@@ -21,8 +21,8 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-// hiddify-app#2478: a WireGuard or AmneziaWG peer given by a domain, with the app's DNS: a
-// fake-IP rule that matches every query, as hiddify-core writes when fake DNS is on. The domain
+// donutvpn-app#2478: a WireGuard or AmneziaWG peer given by a domain, with the app's DNS: a
+// fake-IP rule that matches every query, as donutvpn-core writes when fake DNS is on. The domain
 // is known only to the box's DNS, not to the system: AmneziaWG looked it up with the system
 // resolver, which with the VPN up answers from the tunnel, fake addresses included.
 func TestH_WireGuardDomainPeerWithFakeDNS(t *testing.T) {
@@ -63,7 +63,7 @@ func hTestDomainPeer(t *testing.T, endpointType string, fakeDNS bool, defaultRes
 	config := fmt.Sprintf(`{
 		"dns": {
 			"servers": [
-				{"type": "hosts", "tag": "dns-hosts", "predefined": {"awg-peer.hiddify.test": ["127.0.0.1"]}},
+				{"type": "hosts", "tag": "dns-hosts", "predefined": {"awg-peer.donutvpn.test": ["127.0.0.1"]}},
 				{"type": "fakeip", "tag": "dns-fake", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
 			],
 			"rules": %s,
@@ -75,7 +75,7 @@ func hTestDomainPeer(t *testing.T, endpointType string, fakeDNS bool, defaultRes
 			 "peers": [{%q: %q, %q: ["10.79.0.2/32"]}]},
 			{"type": %q, "tag": "client", "mtu": 1280, %q: ["10.79.0.2/32"],
 			 "private_key": %q,
-			 "peers": [{"address": "awg-peer.hiddify.test", "port": %d, %q: %q, %q: ["10.79.0.1/32"], "persistent_keepalive_interval": 1}]}
+			 "peers": [{"address": "awg-peer.donutvpn.test", "port": %d, %q: %q, %q: ["10.79.0.1/32"], "persistent_keepalive_interval": 1}]}
 		],
 		"outbounds": [{"type": "direct", "tag": "direct"}],
 		"route": {%s}

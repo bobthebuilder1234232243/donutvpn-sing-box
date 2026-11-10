@@ -1,6 +1,6 @@
 # DNSTT
 
-[فارسی](dnstt.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](dnstt.fa.md) · [All DonutVpn features](../../index.md)
 
 DNSTT carries your traffic inside DNS queries and answers. The client sends queries for names
 under a domain you control, through public DNS resolvers, and your DNSTT server answers them. It

@@ -1,6 +1,6 @@
 # Raw transport
 
-[فارسی](raw.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](raw.fa.md) · [All DonutVpn features](../../index.md)
 
 `raw` is a V2Ray transport that adds nothing: the protocol runs straight over TCP, or over TLS
 when the `tls` block is enabled. It is the same as having no `transport` block, and matches

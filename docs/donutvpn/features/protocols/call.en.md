@@ -1,6 +1,6 @@
 # Call tunnel
 
-[فارسی](call.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](call.fa.md) · [All DonutVpn features](../../index.md)
 
 The call tunnel carries proxy traffic inside a video call on a public conferencing service: VK
 Calls, Yandex Telemost, Dion, WB Stream or Bitrix24. One side runs the inbound
@@ -8,7 +8,7 @@ Calls, Yandex Telemost, Dion, WB Stream or Bitrix24. One side runs the inbound
 call, and the data travels as the call's video frames or WebRTC data channels. It was ported
 from sing-box-extended.
 
-**Not tested end to end in Hiddify.** Testing needs accounts on these services, so only the
+**Not tested end to end in DonutVpn.** Testing needs accounts on these services, so only the
 data-channel code has been checked on its own. Expect to debug it yourself.
 
 ## Why use it
@@ -32,7 +32,7 @@ Limits:
 - **Account bans.** The server side uses your own account. The service can see a call that
   runs all day with a non-human video stream and can block the account.
 - **Speed limits.** The service limits the bitrate of video and data channels, so the tunnel is
-  much slower than a direct proxy. The speed has not been measured in Hiddify.
+  much slower than a direct proxy. The speed has not been measured in DonutVpn.
 - **Service changes.** The code imitates each service's web client: hard-coded API versions,
   a Chrome user agent, and, for Telemost, values scraped from the web page. When a service
   changes its client or API, the tunnel stops working until the code is updated.
@@ -142,7 +142,7 @@ config can use your account.
 ### Notes
 
 - `bitrix` works only as an outbound. An inbound with `"platform": "bitrix"` fails with "call:
-  unsupported platform bitrix", so a Hiddify server cannot be the other side.
+  unsupported platform bitrix", so a DonutVpn server cannot be the other side.
 - The outbound accepts `cookies`, but they are not used: the client always joins as a guest.
 - `max_buffered_amount` and `memory_limit` are accepted and have no effect.
 - On `wbstream`, a `mode` other than `dc` or `video` makes the config fail to load with
@@ -155,4 +155,4 @@ config can use your account.
 ## See also
 
 - [Bond](bond.en.md)
-- [All Hiddify features](../../index.md)
+- [All DonutVpn features](../../index.md)

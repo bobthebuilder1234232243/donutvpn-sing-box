@@ -1,6 +1,6 @@
 # Sudoku
 
-[فارسی](sudoku.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](sudoku.fa.md) · [All DonutVpn features](../../index.md)
 
 Sudoku is an encrypted proxy over TCP that hides its bytes as clues of small sudoku puzzles. You can
 tune the result to look like plain text or to have a fixed, low randomness instead of looking
@@ -176,7 +176,7 @@ or an empty `key`, stops the config from loading, on both sides.
 
 ### Compatibility
 
-Tested only between two Hiddify sing-box instances: without the mask, with the HTTP mask, and with
+Tested only between two DonutVpn sing-box instances: without the mask, with the HTTP mask, and with
 `prefer_ascii`. It has not been tested against the original Sudoku or mihomo.
 
 ## See also

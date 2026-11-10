@@ -14,13 +14,13 @@ typedef struct {
 	void *begin;
 	void *end;
 	void *cap;
-} hiddify_empty_vector;
+} donutvpn_empty_vector;
 
 __attribute__((visibility("hidden")))
-hiddify_empty_vector hiddify_outer_bundle_cached_info_plist_data(void) __asm__("__ZN4base3mac30OuterBundleCachedInfoPlistDataEv");
+donutvpn_empty_vector donutvpn_outer_bundle_cached_info_plist_data(void) __asm__("__ZN4base3mac30OuterBundleCachedInfoPlistDataEv");
 
-hiddify_empty_vector hiddify_outer_bundle_cached_info_plist_data(void) {
-	hiddify_empty_vector v = {0, 0, 0};
+donutvpn_empty_vector donutvpn_outer_bundle_cached_info_plist_data(void) {
+	donutvpn_empty_vector v = {0, 0, 0};
 	return v;
 }
 */

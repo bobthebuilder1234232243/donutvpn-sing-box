@@ -1,6 +1,6 @@
 # TLS tricks (tls_tricks)
 
-[فارسی](tls-tricks.fa.md) · [All Hiddify features](../index.md)
+[فارسی](tls-tricks.fa.md) · [All DonutVpn features](../index.md)
 
 `tls_tricks` changes the TLS ClientHello an outbound sends: it can send the server name in a
 random mix of upper and lower case, and add a padding extension of a chosen size. It is the
@@ -78,4 +78,4 @@ number or range, or is out of range, is a configuration error.
 
 - [TLS fragment](tls-fragment.en.md)
 - [finalmask](transports/finalmask.en.md)
-- [REALITY in Hiddify](reality-hiddify.en.md)
+- [REALITY in DonutVpn](reality-donutvpn.en.md)

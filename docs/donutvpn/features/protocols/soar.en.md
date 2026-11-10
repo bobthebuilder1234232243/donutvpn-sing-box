@@ -1,6 +1,6 @@
 # Soar
 
-[فارسی](soar.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](soar.fa.md) · [All DonutVpn features](../../index.md)
 
 Soar carries your TCP connections inside DNS queries and answers, through recursive resolvers,
 to a [Soar](https://github.com/getlantern/soar) server that you run as the authority for a
@@ -55,7 +55,7 @@ It does not help when no resolver you can reach forwards queries for your zone.
   country's ranges. It keeps `want` working and looks for more when some stop. Its settings are
   `smart_pool.discovery`, the block every DNS tunnel shares; DNSTT and MasterDNS take the same
   candidates for their `auto`. These resolvers are paths of the client's own, next to the pool
-  when the config also writes resolvers. hiddify-core sets `discovery.country` from the app's
+  when the config also writes resolvers. donutvpn-core sets `discovery.country` from the app's
   region when it is empty.
 - **Sockets.** The queries go out with the outbound's socket settings (`bind_interface`,
   `routing_mark`) and the platform's protection, so on a VPN they do not loop back into the
@@ -102,7 +102,7 @@ TCP only. UDP is not carried.
 
 ## Links
 
-Soar defines no share link. hiddify-core's ray2sing reads `soar://` in two forms:
+Soar defines no share link. donutvpn-core's ray2sing reads `soar://` in two forms:
 
 - The profile link of [WhiteDNS](https://github.com/WhiteDNS/WhiteDNS-Android), which exports
   and imports `soar://<base64url JSON>` with schema `whitedns.profile`: the server's `domain` and

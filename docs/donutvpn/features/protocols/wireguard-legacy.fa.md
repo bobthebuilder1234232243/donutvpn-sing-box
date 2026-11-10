@@ -14,13 +14,13 @@ sing-box اصلی در نسخهٔ 1.13 خروجی WireGuard را حذف کرد �
 - پیکربندی یا مبدلی دارید که خروجی قدیمی WireGuard را می‌نویسد و نمی‌خواهید آن را به شکل
   endpoint بازنویسی کنید.
 
-برای پیکربندی‌های تازه از [endpoint وایرگارد](wireguard-hiddify.fa.md) استفاده کنید. افزوده‌های
+برای پیکربندی‌های تازه از [endpoint وایرگارد](wireguard-donutvpn.fa.md) استفاده کنید. افزوده‌های
 هیدیفای (بسته‌های noise، بازیابی، نام peer) در آن هست و در این خروجی نیست.
 
 ## چطور از فیلترینگ عبور می‌کند
 
 عبور نمی‌دهد. این WireGuard ساده است و فیلتر می‌تواند آن را از روی دست‌دادنش بشناسد. برای پنهان
-کردن، از [endpoint وایرگارد](wireguard-hiddify.fa.md) با noise یا از [AmneziaWG](amneziawg.fa.md)
+کردن، از [endpoint وایرگارد](wireguard-donutvpn.fa.md) با noise یا از [AmneziaWG](amneziawg.fa.md)
 استفاده کنید.
 
 ## چطور کار می‌کند
@@ -75,7 +75,7 @@ keepalive وجود ندارد، مثل خروجی قدیمی sing-box اصلی.
 
 ## همچنین ببینید
 
-- [WireGuard: افزوده‌های هیدیفای](wireguard-hiddify.fa.md)
+- [WireGuard: افزوده‌های هیدیفای](wireguard-donutvpn.fa.md)
 - [AmneziaWG](amneziawg.fa.md)
 - [WARP](warp.fa.md)
 

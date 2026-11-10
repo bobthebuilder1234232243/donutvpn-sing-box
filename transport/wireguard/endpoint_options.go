@@ -2,7 +2,7 @@ package wireguard
 
 import (
 	"context"
-	hiddify "github.com/sagernet/wireguard-go/hiddify"
+	donutvpn "github.com/sagernet/wireguard-go/donutvpn"
 	"net/netip"
 	"time"
 
@@ -14,7 +14,7 @@ import (
 )
 
 type EndpointOptions struct {
-	Noise        hiddify.NoiseOptions //H
+	Noise        donutvpn.NoiseOptions //H
 	Context      context.Context
 	Logger       logger.ContextLogger
 	System       bool

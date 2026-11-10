@@ -1,9 +1,9 @@
 # sslip.io names in the hosts server
 
-[فارسی](sslip-hosts.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](sslip-hosts.fa.md) · [All DonutVpn features](../../index.md)
 
 A name under `sslip.io` carries its own IP address, such as `1-2-3-4.sslip.io` for `1.2.3.4`.
-Hiddify's `hosts` DNS server (`"type": "hosts"` in the `dns.servers` list) reads the address from
+DonutVpn's `hosts` DNS server (`"type": "hosts"` in the `dns.servers` list) reads the address from
 such a name and answers with it, without asking any DNS server. There is no new field: every
 `hosts` server does this.
 

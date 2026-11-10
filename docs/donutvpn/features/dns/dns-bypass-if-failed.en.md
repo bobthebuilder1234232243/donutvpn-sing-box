@@ -1,6 +1,6 @@
 # DNS rules: bypass_if_failed
 
-[فارسی](dns-bypass-if-failed.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](dns-bypass-if-failed.fa.md) · [All DonutVpn features](../../index.md)
 
 `bypass_if_failed` is a field of the DNS `route` action. When the server chosen by the rule
 fails, the query goes on to the next matching DNS rule instead of failing. Without it, the error

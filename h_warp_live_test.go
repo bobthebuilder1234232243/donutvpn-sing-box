@@ -21,7 +21,7 @@ import (
 )
 
 // Live tests against Cloudflare: each run registers a new free WARP device. They run only with
-// HIDDIFY_WARP_E2E=1.
+// DONUTVPN_WARP_E2E=1.
 func hWARPTrace(t *testing.T, outbound string) {
 	t.Helper()
 	hWARPTraceWithCache(t, outbound, filepath.Join(t.TempDir(), "cache.db"))
@@ -29,8 +29,8 @@ func hWARPTrace(t *testing.T, outbound string) {
 
 func hWARPTraceWithCache(t *testing.T, outbound string, cachePath string) {
 	t.Helper()
-	if os.Getenv("HIDDIFY_WARP_E2E") == "" {
-		t.Skip("HIDDIFY_WARP_E2E is not set")
+	if os.Getenv("DONUTVPN_WARP_E2E") == "" {
+		t.Skip("DONUTVPN_WARP_E2E is not set")
 	}
 	mixedPort := hFreeTCPPort(t)
 	ctx := include.Context(context.Background())
@@ -99,8 +99,8 @@ func TestH_WARPLiveQUICNoise(t *testing.T) {
 
 // A large download through MASQUE with an MTU above 1280, over HTTP/3 and HTTP/2.
 func TestH_WARPLiveMASQUEMTU(t *testing.T) {
-	if os.Getenv("HIDDIFY_WARP_E2E") == "" {
-		t.Skip("HIDDIFY_WARP_E2E is not set")
+	if os.Getenv("DONUTVPN_WARP_E2E") == "" {
+		t.Skip("DONUTVPN_WARP_E2E is not set")
 	}
 	for _, vhttp := range []string{"h3", "h2"} {
 		t.Run(vhttp, func(t *testing.T) {

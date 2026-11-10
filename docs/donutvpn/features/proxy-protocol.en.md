@@ -1,9 +1,9 @@
 # PROXY protocol
 
-[فارسی](proxy-protocol.fa.md) · [All Hiddify features](../index.md)
+[فارسی](proxy-protocol.fa.md) · [All DonutVpn features](../index.md)
 
 The PROXY protocol is a short header at the start of a TCP connection that says which client
-address the connection really comes from. Upstream sing-box removed it in version 1.6. Hiddify
+address the connection really comes from. Upstream sing-box removed it in version 1.6. DonutVpn
 brings it back in two places: inbounds can read the header (`proxy_protocol` in the listen
 fields), and the direct outbound can send it (`proxy_protocol` of `"type": "direct"`).
 
@@ -90,4 +90,4 @@ sends the header. Otherwise anyone can send a header and claim any source addres
 
 ## See also
 
-- [SSH: inbound and Hiddify additions](protocols/ssh.en.md)
+- [SSH: inbound and DonutVpn additions](protocols/ssh.en.md)

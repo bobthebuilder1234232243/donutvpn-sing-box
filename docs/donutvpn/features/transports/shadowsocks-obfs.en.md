@@ -1,6 +1,6 @@
 # Shadowsocks simple-obfs server and fallback
 
-[فارسی](shadowsocks-obfs.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](shadowsocks-obfs.fa.md) · [All DonutVpn features](../../index.md)
 
 The Shadowsocks inbound can run the server side of simple-obfs (`obfs-server`), so clients using
 the `obfs-local` plugin in `http` or `tls` mode can connect to sing-box directly. It can also pass

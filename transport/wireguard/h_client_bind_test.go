@@ -13,7 +13,7 @@ import (
 	M "github.com/sagernet/sing/common/metadata"
 	N "github.com/sagernet/sing/common/network"
 	"github.com/sagernet/wireguard-go/conn"
-	"github.com/sagernet/wireguard-go/hiddify"
+	"github.com/sagernet/wireguard-go/donutvpn"
 	"github.com/stretchr/testify/require"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 )
@@ -138,7 +138,7 @@ func hKey(t *testing.T) wgtypes.Key {
 	return key
 }
 
-func hNoiseEndpoint(t *testing.T, ctx context.Context, peerPort uint16, noise hiddify.NoiseOptions, resolve func(domain string) ([]netip.Addr, error)) *Endpoint {
+func hNoiseEndpoint(t *testing.T, ctx context.Context, peerPort uint16, noise donutvpn.NoiseOptions, resolve func(domain string) ([]netip.Addr, error)) *Endpoint {
 	ep, err := NewEndpoint(EndpointOptions{
 		Context:     ctx,
 		Logger:      logger.NOP(),
@@ -184,7 +184,7 @@ func TestH_EndpointDomainPeerResolverAndReserved(t *testing.T) {
 	capture := hNewCapture(t)
 	var access sync.Mutex
 	var resolved []string
-	ep := hNoiseEndpoint(t, ctx, capture.addrPort().Port(), hiddify.NoiseOptions{}, func(domain string) ([]netip.Addr, error) {
+	ep := hNoiseEndpoint(t, ctx, capture.addrPort().Port(), donutvpn.NoiseOptions{}, func(domain string) ([]netip.Addr, error) {
 		access.Lock()
 		resolved = append(resolved, domain)
 		access.Unlock()
@@ -206,7 +206,7 @@ func TestH_EndpointResolverErrorSendsNothing(t *testing.T) {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 	capture := hNewCapture(t)
-	ep := hNoiseEndpoint(t, ctx, capture.addrPort().Port(), hiddify.NoiseOptions{}, func(domain string) ([]netip.Addr, error) {
+	ep := hNoiseEndpoint(t, ctx, capture.addrPort().Port(), donutvpn.NoiseOptions{}, func(domain string) ([]netip.Addr, error) {
 		return nil, errors.New("nxdomain")
 	})
 	triggerCtx, stopTrigger := context.WithTimeout(ctx, time.Second)
@@ -217,18 +217,18 @@ func TestH_EndpointResolverErrorSendsNothing(t *testing.T) {
 	require.Error(t, err)
 }
 
-func hNoiseOptions(noModify bool) hiddify.NoiseOptions {
-	return hiddify.NoiseOptions{FakePacket: hiddify.FakePacketOptions{
+func hNoiseOptions(noModify bool) donutvpn.NoiseOptions {
+	return donutvpn.NoiseOptions{FakePacket: donutvpn.FakePacketOptions{
 		Enabled:  true,
-		Count:    hiddify.Range{From: 2, To: 2},
-		Size:     hiddify.Range{From: 20, To: 20},
-		Delay:    hiddify.Range{From: 1, To: 1},
+		Count:    donutvpn.Range{From: 2, To: 2},
+		Size:     donutvpn.Range{From: 20, To: 20},
+		Delay:    donutvpn.Range{From: 1, To: 1},
 		Header:   []byte{0xC3},
 		NoModify: noModify,
 	}}
 }
 
-func hCaptureHandshakeWithNoise(t *testing.T, noise hiddify.NoiseOptions) ([][]byte, []byte) {
+func hCaptureHandshakeWithNoise(t *testing.T, noise donutvpn.NoiseOptions) ([][]byte, []byte) {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 	capture := hNewCapture(t)
@@ -260,7 +260,7 @@ func TestH_EndpointNoiseFakePacketsPrecedeHandshake(t *testing.T) {
 }
 
 func TestH_EndpointNoiseDisabledSendsOnlyHandshake(t *testing.T) {
-	fakes, _ := hCaptureHandshakeWithNoise(t, hiddify.NoiseOptions{FakePacket: hiddify.FakePacketOptions{Count: hiddify.Range{From: 3, To: 3}, Size: hiddify.Range{From: 10, To: 10}}})
+	fakes, _ := hCaptureHandshakeWithNoise(t, donutvpn.NoiseOptions{FakePacket: donutvpn.FakePacketOptions{Count: donutvpn.Range{From: 3, To: 3}, Size: donutvpn.Range{From: 10, To: 10}}})
 	require.Empty(t, fakes)
 }
 
@@ -282,11 +282,11 @@ func TestH_EndpointNoiseFakePacketLayout(t *testing.T) {
 // QUIC noise: the fake packets are QUIC v1 Initials of at least 1200 bytes, sent unchanged (no
 // reserved bytes in the version), before the handshake.
 func TestH_EndpointNoiseQUIC(t *testing.T) {
-	fakes, initiation := hCaptureHandshakeWithNoise(t, hiddify.NoiseOptions{FakePacket: hiddify.FakePacketOptions{
+	fakes, initiation := hCaptureHandshakeWithNoise(t, donutvpn.NoiseOptions{FakePacket: donutvpn.FakePacketOptions{
 		Enabled: true,
-		Count:   hiddify.Range{From: 2, To: 2},
-		Delay:   hiddify.Range{From: 1, To: 1},
-		Mode:    hiddify.NoiseModeQUIC,
+		Count:   donutvpn.Range{From: 2, To: 2},
+		Delay:   donutvpn.Range{From: 1, To: 1},
+		Mode:    donutvpn.NoiseModeQUIC,
 		SNI:     "www.example.com",
 	}})
 	require.Len(t, fakes, 2)

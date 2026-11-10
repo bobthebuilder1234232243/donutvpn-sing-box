@@ -2,20 +2,20 @@ package warpscan
 
 import (
 	"github.com/sagernet/sing-box/option"
-	"github.com/sagernet/wireguard-go/hiddify"
+	"github.com/sagernet/wireguard-go/donutvpn"
 )
 
-// NoisePreset is a named noise of hiddify.NoisePresets, with what the WARP endpoint and its
+// NoisePreset is a named noise of donutvpn.NoisePresets, with what the WARP endpoint and its
 // scanner need of it.
 type NoisePreset struct {
 	Name  string
-	Noise hiddify.FakePacketOptions
+	Noise donutvpn.FakePacketOptions
 }
 
-// NoisePresets are hiddify.NoisePresets, tried in this order.
+// NoisePresets are donutvpn.NoisePresets, tried in this order.
 var NoisePresets = func() []NoisePreset {
-	presets := make([]NoisePreset, 0, len(hiddify.NoisePresets))
-	for _, preset := range hiddify.NoisePresets {
+	presets := make([]NoisePreset, 0, len(donutvpn.NoisePresets))
+	for _, preset := range donutvpn.NoisePresets {
 		presets = append(presets, NoisePreset{Name: preset.Name, Noise: preset.Noise})
 	}
 	return presets
@@ -23,15 +23,15 @@ var NoisePresets = func() []NoisePreset {
 
 // NoisePresetByName returns the preset called name, or by a short name such as dns.
 func NoisePresetByName(name string) (NoisePreset, bool) {
-	preset, ok := hiddify.NoisePresetByName(name)
+	preset, ok := donutvpn.NoisePresetByName(name)
 	return NoisePreset{Name: preset.Name, Noise: preset.Noise}, ok
 }
 
 // WireGuard is the preset as the noise of a WireGuard device.
-func (p NoisePreset) WireGuard() hiddify.NoiseOptions {
+func (p NoisePreset) WireGuard() donutvpn.NoiseOptions {
 	noise := p.Noise
 	noise.Enabled = true
-	return hiddify.NoiseOptions{FakePacket: noise}
+	return donutvpn.NoiseOptions{FakePacket: noise}
 }
 
 // AWG is base (nil for none) with the preset as its junk and special packets: i1–i5 from the
@@ -43,7 +43,7 @@ func (p NoisePreset) AWG(base *option.AwgOptions) *option.AwgOptions {
 	}
 	packets := append([]string(nil), p.Noise.Packets...)
 	awg.Jc, awg.Jmin, awg.Jmax = 0, 0, 0
-	if p.Noise.Mode == hiddify.NoiseModeQUIC {
+	if p.Noise.Mode == donutvpn.NoiseModeQUIC {
 		for range p.Noise.Count.To {
 			packets = append(packets, "<qi "+p.Noise.QUICServerName()+">")
 		}
@@ -62,9 +62,9 @@ func (p NoisePreset) AWG(base *option.AwgOptions) *option.AwgOptions {
 
 // AWGProbeNoise is what an AmneziaWG device with awg sends before a handshake initiation, as
 // noise for the scanner's probe: i1–i5, then jc junk packets of jmin to jmax bytes.
-func AWGProbeNoise(awg *option.AwgOptions) hiddify.NoiseOptions {
+func AWGProbeNoise(awg *option.AwgOptions) donutvpn.NoiseOptions {
 	if awg == nil {
-		return hiddify.NoiseOptions{}
+		return donutvpn.NoiseOptions{}
 	}
 	var packets []string
 	for _, packet := range []string{awg.I1, awg.I2, awg.I3, awg.I4, awg.I5} {
@@ -72,11 +72,11 @@ func AWGProbeNoise(awg *option.AwgOptions) hiddify.NoiseOptions {
 			packets = append(packets, packet)
 		}
 	}
-	return hiddify.NoiseOptions{FakePacket: hiddify.FakePacketOptions{
+	return donutvpn.NoiseOptions{FakePacket: donutvpn.FakePacketOptions{
 		Enabled: len(packets) > 0 || awg.Jc > 0,
 		Packets: packets,
-		Mode:    hiddify.NoiseModeRaw,
-		Count:   hiddify.Range{From: int32(awg.Jc), To: int32(awg.Jc)},
-		Size:    hiddify.Range{From: int32(awg.Jmin), To: int32(awg.Jmax)},
+		Mode:    donutvpn.NoiseModeRaw,
+		Count:   donutvpn.Range{From: int32(awg.Jc), To: int32(awg.Jc)},
+		Size:    donutvpn.Range{From: int32(awg.Jmin), To: int32(awg.Jmax)},
 	}}
 }

@@ -155,7 +155,7 @@ func (s *Server) Name() string {
 
 func (s *Server) Start(stage adapter.StartStage, scope *adapter.Scope) error {
 	if stage == adapter.StartStateInitialize {
-		// H: the hiddify clash server owns its traffic manager and URL test history
+		// H: the donutvpn clash server owns its traffic manager and URL test history
 		scope.Add(func() error {
 			return common.Close(s.trafficManager, s.urlTestHistory, common.PtrOrNil(s.cleaner))
 		})

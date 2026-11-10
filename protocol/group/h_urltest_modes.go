@@ -18,7 +18,7 @@ import (
 	N "github.com/sagernet/sing/common/network"
 )
 
-// Hiddify additions to the URL test group, after sing-box-lx (SPEC 054 and 116):
+// DonutVpn additions to the URL test group, after sing-box-lx (SPEC 054 and 116):
 //
 //   - urls: more test URLs. A member is up when any of them answers, so one test URL blocked on a
 //     network does not mark every member dead.

@@ -1,6 +1,6 @@
 # WARP over MASQUE
 
-[فارسی](warp-masque.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](warp-masque.fa.md) · [All DonutVpn features](../../index.md)
 
 WARP over MASQUE connects you to Cloudflare's free WARP VPN with MASQUE, the protocol the
 official WARP apps now use. Your IP packets travel inside an HTTP CONNECT-IP request, over
@@ -56,7 +56,7 @@ register a replacement. The `warp` endpoint with `mode` `masque` takes such a de
 `masque.device` and, once Cloudflare refuses it, goes on with its saved or newly registered
 devices; see [WARP](warp.en.md#how-it-works).
 
-**`masque://` links.** hiddify-core reads a `masque://` link to Cloudflare's WARP (an endpoint in
+**`masque://` links.** donutvpn-core reads a `masque://` link to Cloudflare's WARP (an endpoint in
 WARP's ranges or under `cloudflareclient.com`, or Cloudflare's server name, or none) as a `warp`
 endpoint with `mode` `masque`, with the link's key as `masque.device`, or with none when the link
 has no key. Only a link to another MASQUE server becomes this outbound, and it needs its key.

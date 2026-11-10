@@ -15,7 +15,7 @@ import (
 	box "github.com/sagernet/sing-box"
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/common/monitoring"
-	"github.com/sagernet/sing-box/hiddify/warpscan"
+	"github.com/sagernet/sing-box/donutvpn/warpscan"
 	"github.com/sagernet/sing-box/include"
 	"github.com/sagernet/sing-box/option"
 	"github.com/sagernet/sing-box/protocol/group"
@@ -84,7 +84,7 @@ func hStartWARPBox(t *testing.T, cachePath string, variant hWARPVariant, detour 
 	if variant.outbound {
 		endpoints, extraOutbounds = `[]`, warp+","
 	}
-	level := os.Getenv("HIDDIFY_LOG")
+	level := os.Getenv("DONUTVPN_LOG")
 	if level == "" {
 		level = "warn"
 	}
@@ -183,12 +183,12 @@ func (b *hWARPBox) requireNeverConnected(t *testing.T, period time.Duration) {
 // connects nor reports ready; through a group that moves from a dead member to a working one it
 // connects once it moved.
 func TestH_WARPLiveDetour(t *testing.T) {
-	if os.Getenv("HIDDIFY_WARP_E2E") == "" {
-		t.Skip("HIDDIFY_WARP_E2E is not set")
+	if os.Getenv("DONUTVPN_WARP_E2E") == "" {
+		t.Skip("DONUTVPN_WARP_E2E is not set")
 	}
 	cachePath := filepath.Join(t.TempDir(), "cache.db")
-	only := os.Getenv("HIDDIFY_WARP_VARIANT")
-	onlyDetours := os.Getenv("HIDDIFY_WARP_DETOUR")
+	only := os.Getenv("DONUTVPN_WARP_VARIANT")
+	onlyDetours := os.Getenv("DONUTVPN_WARP_DETOUR")
 	runDetour := func(detour string) bool {
 		return onlyDetours == "" || strings.Contains(","+onlyDetours+",", ","+detour+",")
 	}
@@ -273,8 +273,8 @@ func TestH_WARPLiveDetour(t *testing.T) {
 
 // With the scanner on, the display type shows the endpoint it found.
 func TestH_WARPLiveScannerStatus(t *testing.T) {
-	if os.Getenv("HIDDIFY_WARP_E2E") == "" {
-		t.Skip("HIDDIFY_WARP_E2E is not set")
+	if os.Getenv("DONUTVPN_WARP_E2E") == "" {
+		t.Skip("DONUTVPN_WARP_E2E is not set")
 	}
 	cachePath := filepath.Join(t.TempDir(), "cache.db")
 	for _, variant := range []hWARPVariant{
@@ -296,8 +296,8 @@ func TestH_WARPLiveScannerStatus(t *testing.T) {
 // Every noise preset gets a real WARP handshake through, as WireGuard noise and as AmneziaWG
 // junk and special packets.
 func TestH_WARPLiveNoisePresets(t *testing.T) {
-	if os.Getenv("HIDDIFY_WARP_E2E") == "" {
-		t.Skip("HIDDIFY_WARP_E2E is not set")
+	if os.Getenv("DONUTVPN_WARP_E2E") == "" {
+		t.Skip("DONUTVPN_WARP_E2E is not set")
 	}
 	cachePath := filepath.Join(t.TempDir(), "cache.db")
 	for _, preset := range warpscan.NoisePresets {
@@ -319,8 +319,8 @@ func TestH_WARPLiveNoisePresets(t *testing.T) {
 // Two warp endpoints in one box get a device each, and both connect: on one device they would
 // push each other off Cloudflare. A new box gives each the device it had.
 func TestH_WARPLiveTwoEndpoints(t *testing.T) {
-	if os.Getenv("HIDDIFY_WARP_E2E") == "" {
-		t.Skip("HIDDIFY_WARP_E2E is not set")
+	if os.Getenv("DONUTVPN_WARP_E2E") == "" {
+		t.Skip("DONUTVPN_WARP_E2E is not set")
 	}
 	cachePath := filepath.Join(t.TempDir(), "cache.db")
 	start := func() *box.Box {

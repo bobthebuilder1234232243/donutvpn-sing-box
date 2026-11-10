@@ -10,7 +10,7 @@ import (
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/common/dialer"
 	"github.com/sagernet/sing-box/common/tls"
-	"github.com/sagernet/sing-box/hiddify/warpscan"
+	"github.com/sagernet/sing-box/donutvpn/warpscan"
 	"github.com/sagernet/sing-box/log"
 	"github.com/sagernet/sing-box/option"
 	"github.com/sagernet/sing-box/transport/masque"

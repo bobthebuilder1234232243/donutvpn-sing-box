@@ -1,6 +1,6 @@
 # WARP scanner and noise
 
-[فارسی](warp-scanner.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](warp-scanner.fa.md) · [All DonutVpn features](../../index.md)
 
 How a [WARP](warp.en.md) endpoint finds a way through a network that blocks it: the **endpoint
 scanner** looks for a Cloudflare address and port that answers, **noise** sends a few decoy
@@ -76,7 +76,7 @@ As AmneziaWG settings, a preset's templates become `i1`, `i2`, … and its junk 
 `jmax`; `quic` becomes `<qi www.google.com>` packets. `awg` mode without `awg` settings uses
 `dns-google`.
 
-The presets are not only for WARP: any [WireGuard](wireguard-hiddify.en.md) endpoint takes one
+The presets are not only for WARP: any [WireGuard](wireguard-donutvpn.en.md) endpoint takes one
 as its noise `mode` (`"mode": "sip"`), and any [AmneziaWG](amneziawg.en.md) endpoint as its `ip`
 (`"ip": "sip"`). `dns` and `random` are short for `dns-google` and `xray-random`.
 
@@ -205,5 +205,5 @@ The other scanner fields (`ports`, `cidrs`, `max_rtt`, `timeout`, `count`, `conc
 
 - [WARP](warp.en.md)
 - [WARP over MASQUE](warp-masque.en.md)
-- [WireGuard: Hiddify additions](wireguard-hiddify.en.md)
+- [WireGuard: DonutVpn additions](wireguard-donutvpn.en.md)
 - [AmneziaWG](amneziawg.en.md)

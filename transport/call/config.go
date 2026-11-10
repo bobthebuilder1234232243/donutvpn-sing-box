@@ -70,7 +70,7 @@ func Connect(ctx context.Context, cfg Config) (*Bridge, error) {
 			return &Bridge{relay: relay}, nil
 		}
 	case "wbstream":
-		if err := CheckMode(cfg.Platform, cfg.Mode); err != nil { // Hiddify: an unknown mode never connected
+		if err := CheckMode(cfg.Platform, cfg.Mode); err != nil { // DonutVpn: an unknown mode never connected
 			return nil, err
 		}
 		switch cfg.Role {

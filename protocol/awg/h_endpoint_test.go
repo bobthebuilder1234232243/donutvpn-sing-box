@@ -14,7 +14,7 @@ import (
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/adapter/endpoint"
 	C "github.com/sagernet/sing-box/constant"
-	"github.com/sagernet/sing-box/hiddify/peeruser"
+	"github.com/sagernet/sing-box/donutvpn/peeruser"
 	"github.com/sagernet/sing-box/log"
 	"github.com/sagernet/sing-box/option"
 	transportAwg "github.com/sagernet/sing-box/transport/awg"

@@ -35,13 +35,13 @@ import (
 // Interop tests against real Xray binaries. Xray servers allow loopback in freedom: since 26.10
 // it blocks private addresses for proxied connections by default.
 //
-// Interop tests against real Xray binaries. HIDDIFY_XRAY lists them, separated by ":"; the tests
+// Interop tests against real Xray binaries. DONUTVPN_XRAY lists them, separated by ":"; the tests
 // skip when it is empty.
 func hXrayBinaries(t *testing.T) []string {
 	t.Helper()
-	value := os.Getenv("HIDDIFY_XRAY")
+	value := os.Getenv("DONUTVPN_XRAY")
 	if value == "" {
-		t.Skip("HIDDIFY_XRAY is not set")
+		t.Skip("DONUTVPN_XRAY is not set")
 	}
 	return strings.Split(value, ":")
 }
@@ -115,7 +115,7 @@ func hEchoThroughSOCKS(t *testing.T, proxyPort int, echoAddress string) {
 	require.NoError(t, err)
 	defer conn.Close()
 	conn.SetDeadline(time.Now().Add(10 * time.Second))
-	payload := bytes.Repeat([]byte("hiddify interop "), 4096)
+	payload := bytes.Repeat([]byte("donutvpn interop "), 4096)
 	go conn.Write(payload)
 	reply := make([]byte, len(payload))
 	_, err = io.ReadFull(conn, reply)
@@ -229,7 +229,7 @@ func TestH_XrayXHTTP(t *testing.T) {
 			{"packet-up obfs header",
 				`"mode": "packet-up", "path": "/xh", "xPaddingObfsMode": true, "xPaddingPlacement": "header", "xPaddingHeader": "X-Pad", "xPaddingKey": "x_pad"`,
 				`"mode": "packet-up", "path": "/xh", "x_padding_obfs_mode": true, "x_padding_placement": "header", "x_padding_header": "X-Pad", "x_padding_key": "x_pad"`},
-			// hiddify-app#2479: tokenish padding with obfs mode and a custom header and key
+			// donutvpn-app#2479: tokenish padding with obfs mode and a custom header and key
 			{"stream-one tokenish obfs",
 				`"mode": "stream-one", "path": "/xh", "xPaddingObfsMode": true, "xPaddingMethod": "tokenish", "xPaddingPlacement": "queryInHeader", "xPaddingHeader": "9267f8", "xPaddingKey": "_826c26"`,
 				`"mode": "stream-one", "path": "/xh", "x_padding_obfs_mode": true, "x_padding_method": "tokenish", "x_padding_placement": "queryInHeader", "x_padding_header": "9267f8", "x_padding_key": "_826c26"`},

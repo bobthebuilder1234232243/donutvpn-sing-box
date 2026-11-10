@@ -25,7 +25,7 @@ _htest/
 CLAUDE.md
 AGENTS.md
 /.claude/*
-# Hiddify: the agent rules and the hiddify-feature skill are tracked; local agent settings are not
+# DonutVpn: the agent rules and the donutvpn-feature skill are tracked; local agent settings are not
 !/CLAUDE.md
 !/AGENTS.md
 !/.claude/skills/

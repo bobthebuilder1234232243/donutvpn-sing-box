@@ -88,6 +88,6 @@ TCP فرستاده می‌شود، پیش از آن‌که بتوان تکه‌�
 
 - [finalmask](transports/finalmask.fa.md)
 - [ترفندهای TLS](tls-tricks.fa.md)
-- [REALITY در هیدیفای](reality-hiddify.fa.md)
+- [REALITY در هیدیفای](reality-donutvpn.fa.md)
 
 </div>

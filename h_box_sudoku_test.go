@@ -33,11 +33,11 @@ func TestH_Sudoku(t *testing.T) {
 			hStartInteropBox(t, `{
 				"log": {"disabled": true},
 				"inbounds": [
-					{"type": "sudoku", "tag": "sudoku-in", "listen": "127.0.0.1", "listen_port": `+strconv.Itoa(sudokuPort)+`, "key": "hiddify-test-key"`+variant.inbound+`},
+					{"type": "sudoku", "tag": "sudoku-in", "listen": "127.0.0.1", "listen_port": `+strconv.Itoa(sudokuPort)+`, "key": "donutvpn-test-key"`+variant.inbound+`},
 					{"type": "mixed", "listen": "127.0.0.1", "listen_port": `+strconv.Itoa(mixedPort)+`}
 				],
 				"outbounds": [
-					{"type": "sudoku", "tag": "sudoku", "server": "127.0.0.1", "server_port": `+strconv.Itoa(sudokuPort)+`, "key": "hiddify-test-key"`+variant.outbound+`},
+					{"type": "sudoku", "tag": "sudoku", "server": "127.0.0.1", "server_port": `+strconv.Itoa(sudokuPort)+`, "key": "donutvpn-test-key"`+variant.outbound+`},
 					{"type": "direct", "tag": "direct"}
 				],
 				"route": {"rules": [{"inbound": "sudoku-in", "outbound": "direct"}], "final": "sudoku"}
@@ -65,7 +65,7 @@ func TestH_SudokuFallback(t *testing.T) {
 	sudokuPort := hFreeTCPPort(t)
 	hStartInteropBox(t, `{
 		"log": {"disabled": true},
-		"inbounds": [{"type": "sudoku", "listen": "127.0.0.1", "listen_port": `+strconv.Itoa(sudokuPort)+`, "key": "hiddify-test-key",
+		"inbounds": [{"type": "sudoku", "listen": "127.0.0.1", "listen_port": `+strconv.Itoa(sudokuPort)+`, "key": "donutvpn-test-key",
 			"disable_http_mask": true, "fallback": "`+site.Listener.Addr().String()+`"}],
 		"outbounds": [{"type": "direct"}]
 	}`, nil)

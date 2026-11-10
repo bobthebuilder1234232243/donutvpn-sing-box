@@ -1,10 +1,10 @@
 # TrustTunnel
 
-[فارسی](trusttunnel.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](trusttunnel.fa.md) · [All DonutVpn features](../../index.md)
 
 TrustTunnel is a VPN protocol published at [trusttunnel.org](https://trusttunnel.org/). It carries
 your traffic as HTTP `CONNECT` requests inside an HTTPS connection, over HTTP/2 on TLS or over
-HTTP/3 on QUIC. Hiddify uses the
+HTTP/3 on QUIC. DonutVpn uses the
 [sing-trusttunnel](https://github.com/xchacha20-poly1305/sing-trusttunnel) library. In a config it
 is the outbound `"type": "trusttunnel"`, and the inbound of the same type runs a server.
 
@@ -84,7 +84,7 @@ QUIC is blocked.
 
 ### Notes
 
-- QUIC needs the `with_quic` build tag. Hiddify's builds include it. Without it, `quic: true`
+- QUIC needs the `with_quic` build tag. DonutVpn's builds include it. Without it, `quic: true`
   fails with a "QUIC is not included" error.
 - Without TLS, or without a user name and password, the outbound fails to load. The inbound fails
   to load without at least one user.
@@ -92,4 +92,4 @@ QUIC is blocked.
 
 ## See also
 
-- [All Hiddify features](../../index.md)
+- [All DonutVpn features](../../index.md)

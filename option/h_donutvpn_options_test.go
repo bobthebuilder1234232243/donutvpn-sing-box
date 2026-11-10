@@ -220,7 +220,7 @@ func TestH_SmartPoolDiscoveryOptions(t *testing.T) {
 	require.Equal(t, "cn", so.SmartPool.DiscoveryOptions().Country)
 }
 
-func TestH_DNSServerOptionsHiddify(t *testing.T) {
+func TestH_DNSServerOptionsDonutVpn(t *testing.T) {
 	t.Parallel()
 	sdns := hRoundTrip[SDNSDNSServerOptions](t, `{"server":"1.1.1.1","stamp":"sdns://AgcAAAAAAAAABzEuMC4wLjEAEmRucy5jbG91ZGZsYXJlLmNvbQovZG5zLXF1ZXJ5"}`)
 	require.Contains(t, sdns.Stamp, "sdns://")

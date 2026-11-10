@@ -1,6 +1,6 @@
 # XDRIVE transport
 
-[فارسی](xdrive.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](xdrive.fa.md) · [All DonutVpn features](../../index.md)
 
 XDRIVE is Xray-core's storage transport. The client and the server never connect to each other:
 the client writes the connection's data as files in a storage service, and the server reads them
@@ -113,8 +113,8 @@ host's own name.
 
 - Xray allows XDRIVE only for VLESS with `encryption` (run `xray vlessenc` for a key pair) and no
   `flow`. Use the same with an Xray server.
-- The transport is built with the `with_xdrive` tag, which the Makefile and hiddify-core turn on.
-- Xray has no share link for XDRIVE. hiddify-core writes an Xray JSON outbound with XDRIVE as a
+- The transport is built with the `with_xdrive` tag, which the Makefile and donutvpn-core turn on.
+- Xray has no share link for XDRIVE. donutvpn-core writes an Xray JSON outbound with XDRIVE as a
   VLESS link with `type=xdrive` and Xray's `xdriveSettings` as JSON in `xdrive=` (the stream's
   `address` and `port` included, for fronting), and ray2sing reads that link back.
 - The `local` service is for tests and for a client and a server on one machine or a shared disk.

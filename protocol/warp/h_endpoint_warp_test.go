@@ -14,7 +14,7 @@ import (
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/adapter/endpoint"
 	C "github.com/sagernet/sing-box/constant"
-	"github.com/sagernet/sing-box/hiddify/warpscan"
+	"github.com/sagernet/sing-box/donutvpn/warpscan"
 	"github.com/sagernet/sing-box/log"
 	"github.com/sagernet/sing-box/option"
 	E "github.com/sagernet/sing/common/exceptions"
@@ -22,7 +22,7 @@ import (
 	M "github.com/sagernet/sing/common/metadata"
 	N "github.com/sagernet/sing/common/network"
 	"github.com/sagernet/sing/service"
-	"github.com/sagernet/wireguard-go/hiddify"
+	"github.com/sagernet/wireguard-go/donutvpn"
 	"github.com/stretchr/testify/require"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 )
@@ -439,7 +439,7 @@ func TestH_WARPNoisePresetOption(t *testing.T) {
 	})
 	require.ErrorContains(t, err, "unknown noise preset: nope")
 	options := option.WARPEndpointOptions{}
-	options.Noise.FakePacket = hiddify.FakePacketOptions{Enabled: true, Packets: []string{"<x>"}}
+	options.Noise.FakePacket = donutvpn.FakePacketOptions{Enabled: true, Packets: []string{"<x>"}}
 	_, err = NewWARPEndpoint(hTestContext(t), nil, hLogger(), "warp-tag", options)
 	require.ErrorContains(t, err, "unknown tag")
 }

@@ -1,10 +1,10 @@
 # TLS fragment (tls_fragment)
 
-[فارسی](tls-fragment.fa.md) · [All Hiddify features](../index.md)
+[فارسی](tls-fragment.fa.md) · [All DonutVpn features](../index.md)
 
 `tls_fragment` splits the TLS ClientHello an outbound sends into many small pieces, with an
 optional pause between them. It is the `tls_fragment` object in the dial fields of an outbound
-(next to `detour`, not inside `tls`). Hiddify keeps it for existing configs; inside, it is applied
+(next to `detour`, not inside `tls`). DonutVpn keeps it for existing configs; inside, it is applied
 as the first [finalmask](transports/finalmask.en.md) `fragment` mask.
 
 ## Why use it
@@ -44,7 +44,7 @@ Upstream sing-box has two switches inside the `tls` block:
 - `tls.record_fragment` splits the ClientHello into several TLS records, also inside the server name.
 
 They take no sizes or delays. In this fork both also work with REALITY (upstream ignored them on
-REALITY nodes). `tls_fragment` is Hiddify's own option: it sets the piece size and the pause, and
+REALITY nodes). `tls_fragment` is DonutVpn's own option: it sets the piece size and the pause, and
 can split writes other than the ClientHello. Use one of them, not several at once.
 
 ## Configuration
@@ -88,4 +88,4 @@ already has its own enabled `tls_fragment`. Then the one in the `tls` block is i
 
 - [finalmask](transports/finalmask.en.md)
 - [TLS tricks](tls-tricks.en.md)
-- [REALITY in Hiddify](reality-hiddify.en.md)
+- [REALITY in DonutVpn](reality-donutvpn.en.md)

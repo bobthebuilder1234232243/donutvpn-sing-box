@@ -12,13 +12,13 @@ import (
 
 	box "github.com/sagernet/sing-box"
 	"github.com/sagernet/sing-box/adapter"
-	"github.com/sagernet/sing-box/hiddify/warpscan"
+	"github.com/sagernet/sing-box/donutvpn/warpscan"
 	"github.com/sagernet/sing-box/include"
 	"github.com/sagernet/sing-box/option"
 	"github.com/sagernet/sing/common/json"
 	M "github.com/sagernet/sing/common/metadata"
 	N "github.com/sagernet/sing/common/network"
-	"github.com/sagernet/wireguard-go/hiddify"
+	"github.com/sagernet/wireguard-go/donutvpn"
 
 	"github.com/stretchr/testify/require"
 )
@@ -63,7 +63,7 @@ func hWireGuardServerOn(t *testing.T, port int, serverPrivate string, clientPubl
 func TestH_WARPScannerWireGuardProbe(t *testing.T) {
 	clientPrivate, clientPublic := hWireGuardKey(t)
 	port, serverPublic := hWireGuardServer(t, clientPublic)
-	probe, err := warpscan.WireGuardProbe(N.SystemDialer, clientPrivate, serverPublic, hiddify.NoiseOptions{})
+	probe, err := warpscan.WireGuardProbe(N.SystemDialer, clientPrivate, serverPublic, donutvpn.NoiseOptions{})
 	require.NoError(t, err)
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 	defer cancel()
@@ -73,7 +73,7 @@ func TestH_WARPScannerWireGuardProbe(t *testing.T) {
 
 	// a key the server does not know gets no answer
 	otherPrivate, _ := hWireGuardKey(t)
-	stranger, err := warpscan.WireGuardProbe(N.SystemDialer, otherPrivate, serverPublic, hiddify.NoiseOptions{})
+	stranger, err := warpscan.WireGuardProbe(N.SystemDialer, otherPrivate, serverPublic, donutvpn.NoiseOptions{})
 	require.NoError(t, err)
 	shortCtx, shortCancel := context.WithTimeout(context.Background(), 500*time.Millisecond)
 	defer shortCancel()
@@ -81,8 +81,8 @@ func TestH_WARPScannerWireGuardProbe(t *testing.T) {
 	require.Error(t, err)
 
 	// noise packets before the initiation do not stop the handshake
-	noisy, err := warpscan.WireGuardProbe(N.SystemDialer, clientPrivate, serverPublic, hiddify.NoiseOptions{FakePacket: hiddify.FakePacketOptions{
-		Enabled: true, Count: hiddify.Range{From: 2, To: 3}, Size: hiddify.Range{From: 20, To: 40}, Delay: hiddify.Range{From: 1, To: 5},
+	noisy, err := warpscan.WireGuardProbe(N.SystemDialer, clientPrivate, serverPublic, donutvpn.NoiseOptions{FakePacket: donutvpn.FakePacketOptions{
+		Enabled: true, Count: donutvpn.Range{From: 2, To: 3}, Size: donutvpn.Range{From: 20, To: 40}, Delay: donutvpn.Range{From: 1, To: 5},
 	}})
 	require.NoError(t, err)
 	_, err = noisy(ctx, netip.AddrPortFrom(netip.MustParseAddr("127.0.0.1"), port))

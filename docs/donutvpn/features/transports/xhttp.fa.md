@@ -154,7 +154,7 @@ Xray است (`xPaddingBytes` می‌شود `x_padding_bytes`). دو طرف با�
 
 ## همچنین ببینید
 
-- [REALITY در هیدیفای](../reality-hiddify.fa.md)
+- [REALITY در هیدیفای](../reality-donutvpn.fa.md)
 - [رمزگذاری VLESS](../protocols/vless-encryption.fa.md)
 - [finalmask](finalmask.fa.md)
 

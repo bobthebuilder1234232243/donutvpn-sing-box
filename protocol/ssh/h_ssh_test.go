@@ -296,11 +296,11 @@ func TestH_SSHInboundRejectsNonForwardChannels(t *testing.T) {
 
 func TestH_SSHInboundServerVersion(t *testing.T) {
 	t.Parallel()
-	f := startInbound(t, func(o *option.SSHInboundOptions) { o.ServerVersion = "SSH-2.0-HiddifyTest" })
+	f := startInbound(t, func(o *option.SSHInboundOptions) { o.ServerVersion = "SSH-2.0-DonutVpnTest" })
 	client, err := f.dial("alice", ssh.Password("wonderland"))
 	require.NoError(t, err)
 	defer client.Close()
-	require.Equal(t, "SSH-2.0-HiddifyTest", string(client.ServerVersion()))
+	require.Equal(t, "SSH-2.0-DonutVpnTest", string(client.ServerVersion()))
 }
 
 func newTestOutbound(t *testing.T, f *sshFixture, mutate func(*option.SSHOutboundOptions)) *Outbound {

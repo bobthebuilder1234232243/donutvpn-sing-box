@@ -9,7 +9,7 @@ import (
 	"github.com/sagernet/sing-box/adapter"
 	C "github.com/sagernet/sing-box/constant"
 	"github.com/sagernet/sing-box/experimental/deprecated"
-	"github.com/sagernet/sing-box/hiddify/finalmask"
+	"github.com/sagernet/sing-box/donutvpn/finalmask"
 	"github.com/sagernet/sing-box/option"
 	E "github.com/sagernet/sing/common/exceptions"
 	M "github.com/sagernet/sing/common/metadata"

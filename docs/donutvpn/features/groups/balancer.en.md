@@ -1,9 +1,9 @@
 # Balancer
 
-[فارسی](balancer.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](balancer.fa.md) · [All DonutVpn features](../../index.md)
 
 The balancer is an outbound group that spreads connections over its members. It picks a member
-for each connection, using the test results from Hiddify's [monitoring](monitoring.en.md). It is
+for each connection, using the test results from DonutVpn's [monitoring](monitoring.en.md). It is
 an outbound: `"type": "balancer"` in the `outbounds` list.
 
 ## Why use it
@@ -13,7 +13,7 @@ an outbound: `"type": "balancer"` in the `outbounds` list.
   break.
 - Always use the fastest server, without the URL test group's own test schedule.
 
-The Hiddify app uses it for its "lowest delay" and "load balance" groups.
+The DonutVpn app uses it for its "lowest delay" and "load balance" groups.
 
 ## How it gets past filtering
 
@@ -68,7 +68,7 @@ answered again. Tests outside a cycle, such as a test the user asks for, apply a
 The first cycle after start, and one after a network change, are not held: there is no selection
 worth keeping yet, and each result is taken as it comes, after the debounce of the group events.
 
-hiddify-core shows a `round-robin` group in the app as its fastest member, and keeps that member
+donutvpn-core shows a `round-robin` group in the app as its fastest member, and keeps that member
 until another one is faster by more than the larger of 50 ms and a tenth of its delay, or it
 stops answering; during a regular cycle, until it stops answering.
 

@@ -18,7 +18,7 @@ func ConnectCreator(ctx context.Context, cookieStr, roomID, email, password stri
 	if err != nil {
 		return nil, "", fmt.Errorf("dion: new session: %w", err)
 	}
-	if cookieStr != "" || email == "" || password == "" { // Hiddify: email and password alone log in
+	if cookieStr != "" || email == "" || password == "" { // DonutVpn: email and password alone log in
 		if err := auth.LoadCookieString(cookieStr); err != nil {
 			return nil, "", fmt.Errorf("dion: load cookies: %w", err)
 		}
@@ -70,7 +70,7 @@ func ConnectCreator(ctx context.Context, cookieStr, roomID, email, password stri
 		}
 		previous := activeRelay
 		activeRelay = tunnel.NewRelayBridge(tun, "creator", bridgeReadBuf, dialer, logger)
-		activeRelay.InheritHandlers(previous) // Hiddify: keep routing after a reconnect
+		activeRelay.InheritHandlers(previous) // DonutVpn: keep routing after a reconnect
 		activeRelay.MarkReady()
 		select {
 		case relayCh <- activeRelay:

@@ -16,7 +16,7 @@ import (
 )
 
 // A peer given by a domain was resolved by the system resolver when the endpoint was created
-// (hiddify-app#2478). With the VPN up, the system's DNS goes into the tunnel: with fake DNS it got
+// (donutvpn-app#2478). With the VPN up, the system's DNS goes into the tunnel: with fake DNS it got
 // a fake address (198.18.0.0/15), which the system kept for its TTL, and every handshake went
 // there; a WARP endpoint in AmneziaWG mode, which makes its inner endpoint again on failover,
 // looked it up through the tunnel it was replacing. A failed lookup also failed the box's start.

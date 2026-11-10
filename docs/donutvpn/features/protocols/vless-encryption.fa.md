@@ -96,7 +96,7 @@ Vision: در هیدیفای، `flow: "xtls-rprx-vision"` روی خروجی بد�
 
 ## همچنین ببینید
 
-- [REALITY در هیدیفای](../reality-hiddify.fa.md)
+- [REALITY در هیدیفای](../reality-donutvpn.fa.md)
 - [ترنسپورت XHTTP](../transports/xhttp.fa.md)
 
 </div>

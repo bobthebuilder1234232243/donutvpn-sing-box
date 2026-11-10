@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestH_ProxyDisplayNameHiddifyTypes(t *testing.T) {
+func TestH_ProxyDisplayNameDonutVpnTypes(t *testing.T) {
 	t.Parallel()
 	cases := map[string]string{
 		TypeWARP:           "WARP",
@@ -33,7 +33,7 @@ func TestH_ProxyDisplayNameHiddifyTypes(t *testing.T) {
 	require.Equal(t, "Unknown", ProxyDisplayName(""))
 }
 
-func TestH_HiddifyTypeValues(t *testing.T) {
+func TestH_DonutVpnTypeValues(t *testing.T) {
 	t.Parallel()
 	values := map[string]string{
 		"TypeWARP":            TypeWARP,

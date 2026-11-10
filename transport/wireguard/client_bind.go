@@ -216,7 +216,7 @@ func (c *ClientBind) Send(bufs [][]byte, ep conn.Endpoint, offset int) error {
 }
 
 // SendWithoutModify sends packets as they are, without writing the reserved bytes; the
-// hiddify wireguard-go fork uses it for Noise fake packets. //H
+// donutvpn wireguard-go fork uses it for Noise fake packets. //H
 func (c *ClientBind) SendWithoutModify(bufs [][]byte, ep conn.Endpoint, offset int) error {
 	udpConn, err := c.connect()
 	if err != nil {

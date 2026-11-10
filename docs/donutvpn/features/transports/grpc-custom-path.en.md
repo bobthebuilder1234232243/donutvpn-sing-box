@@ -1,6 +1,6 @@
 # Custom gRPC paths
 
-[فارسی](grpc-custom-path.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](grpc-custom-path.fa.md) · [All DonutVpn features](../../index.md)
 
 The gRPC transport's `service_name` can be a full custom path, as in Xray. A name that starts with
 `/` is read as `/<service>/<stream>`, so `/my/path/Tun` sends requests to the path

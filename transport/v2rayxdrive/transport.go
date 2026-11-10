@@ -9,7 +9,7 @@ import (
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/common/dialer"
 	"github.com/sagernet/sing-box/common/tls"
-	"github.com/sagernet/sing-box/hiddify/finalmask"
+	"github.com/sagernet/sing-box/donutvpn/finalmask"
 	"github.com/sagernet/sing-box/option"
 	"github.com/sagernet/sing-box/transport/v2ray"
 	"github.com/sagernet/sing/common/logger"

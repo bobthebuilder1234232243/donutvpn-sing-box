@@ -19,7 +19,7 @@ import (
 // A TCP connection from an app to an IPv6 address goes through the TUN's own handshake at once,
 // before the proxy has tried the destination. When the proxy's exit has no IPv6, the proxy then
 // closes the stream, and the app sees a connection that opened and died: Chrome shows
-// ERR_CONNECTION_CLOSED and never tries the IPv4 address (hiddify-app #2307, #2420). A reset at
+// ERR_CONNECTION_CLOSED and never tries the IPv4 address (donutvpn-app #2307, #2420). A reset at
 // that point is no better, since an app falls back only when the connect itself fails.
 //
 // So the router carries such a connection itself (route option ipv6_fallback): it dials the

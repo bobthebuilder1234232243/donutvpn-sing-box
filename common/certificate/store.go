@@ -52,7 +52,7 @@ func NewStore(ctx context.Context, logger logger.Logger, options option.Certific
 			systemPool.AddCert(certificate)
 			systemValid = true
 		}
-		if platformInterface != nil { // H: certificates the hiddify app hands over
+		if platformInterface != nil { // H: certificates the donutvpn app hands over
 			for _, cert := range platformInterface.SystemCertificates() {
 				if systemPool.AppendCertsFromPEM([]byte(cert)) {
 					systemValid = true

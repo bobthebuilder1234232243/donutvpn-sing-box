@@ -1,6 +1,6 @@
 # Bond
 
-[فارسی](bond.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](bond.fa.md) · [All DonutVpn features](../../index.md)
 
 Bond splits every connection over several connections at once, called legs, and joins them
 again on the server. The legs can be any outbounds: different protocols, servers, ports or

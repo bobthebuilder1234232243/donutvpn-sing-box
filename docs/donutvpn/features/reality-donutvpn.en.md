@@ -1,8 +1,8 @@
-# REALITY in Hiddify
+# REALITY in DonutVpn
 
-[فارسی](reality-hiddify.fa.md) · [All Hiddify features](../index.md)
+[فارسی](reality-donutvpn.fa.md) · [All DonutVpn features](../index.md)
 
-Hiddify changes how the REALITY client builds its ClientHello so it connects to current Xray
+DonutVpn changes how the REALITY client builds its ClientHello so it connects to current Xray
 servers, and adds one option, `key_share`, in the `reality` object of an outbound's `tls` block.
 This page covers only those changes; the rest of REALITY works as in sing-box.
 
@@ -10,7 +10,7 @@ This page covers only those changes; the rest of REALITY works as in sing-box.
 
 Xray servers from v26.9.8 reject a REALITY ClientHello without the hybrid post-quantum key share
 (X25519MLKEM768). Upstream sing-box removes that key share from REALITY ClientHellos, so it cannot
-connect to those servers. Hiddify sends it, and still connects to older servers.
+connect to those servers. DonutVpn sends it, and still connects to older servers.
 
 ## How it gets past filtering
 

@@ -186,14 +186,14 @@ func TestH_WriteReadStringItemsRoundTrip(t *testing.T) {
 	t.Parallel()
 	rule := option.DefaultHeadlessRule{
 		Network:          badoption.Listable[string]{"tcp", "udp"},
-		DomainKeyword:    badoption.Listable[string]{"google", "hiddify"},
+		DomainKeyword:    badoption.Listable[string]{"google", "donutvpn"},
 		DomainRegex:      badoption.Listable[string]{`^.+\.example\.com$`},
 		SourcePortRange:  badoption.Listable[string]{"1000:2000"},
 		PortRange:        badoption.Listable[string]{":3000"},
 		ProcessName:      badoption.Listable[string]{"curl"},
 		ProcessPath:      badoption.Listable[string]{"/usr/bin/curl"},
 		ProcessPathRegex: badoption.Listable[string]{`^/usr/.*`},
-		PackageName:      badoption.Listable[string]{"app.hiddify.com"},
+		PackageName:      badoption.Listable[string]{"app.donutvpn.com"},
 		WIFISSID:         badoption.Listable[string]{"home"},
 		WIFIBSSID:        badoption.Listable[string]{"00:11:22:33:44:55"},
 		Port:             badoption.Listable[uint16]{443},

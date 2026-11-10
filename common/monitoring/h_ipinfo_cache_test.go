@@ -12,7 +12,7 @@ import (
 
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/adapter/htest"
-	"github.com/sagernet/sing-box/hiddify/ipinfo"
+	"github.com/sagernet/sing-box/donutvpn/ipinfo"
 	"github.com/sagernet/sing-box/option"
 	"github.com/sagernet/sing/common/json/badoption"
 	M "github.com/sagernet/sing/common/metadata"

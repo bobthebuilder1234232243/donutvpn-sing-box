@@ -5,7 +5,7 @@ import (
 
 	C "github.com/sagernet/sing-box/constant"
 	"github.com/sagernet/sing/common/json/badoption"
-	hiddify "github.com/sagernet/wireguard-go/hiddify"
+	donutvpn "github.com/sagernet/wireguard-go/donutvpn"
 )
 
 type WireGuardEndpointOptions struct {
@@ -24,7 +24,7 @@ type WireGuardEndpointOptions struct {
 	OnDemand     bool                             `json:"on_demand,omitempty"`
 	DialerOptions
 
-	Noise hiddify.NoiseOptions `json:"noise,omitempty"` //H
+	Noise donutvpn.NoiseOptions `json:"noise,omitempty"` //H
 	AWG   *AwgOptions          `json:"awg,omitempty"`   //H
 	// MTUDiscovery lowers the MTU to what gets through the tunnel; on unless false. //H
 	MTUDiscovery *bool `json:"mtu_discovery,omitempty"` //H
@@ -56,7 +56,7 @@ type WARPEndpointOptions struct { //H
 
 	UniqueIdentifier string `json:"unique_identifier,omitempty"`
 	ServerOptions
-	Noise hiddify.NoiseOptions `json:"noise,omitempty"`
+	Noise donutvpn.NoiseOptions `json:"noise,omitempty"`
 	AWG   *AwgOptions          `json:"awg,omitempty"`
 	// Mode is the tunnel: "wg", "awg", "masque", or "auto" (the fastest that answers). Empty
 	// follows the masque and awg blocks.

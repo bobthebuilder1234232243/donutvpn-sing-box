@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/sagernet/sing-box/option"
-	"github.com/sagernet/wireguard-go/hiddify"
+	"github.com/sagernet/wireguard-go/donutvpn"
 
 	"github.com/stretchr/testify/require"
 )
@@ -51,7 +51,7 @@ func TestH_NoisePresetAWG(t *testing.T) {
 	require.Equal(t, "<qi www.google.com>", awg.I1)
 
 	noise := AWGProbeNoise(&option.AwgOptions{Jc: 2, Jmin: 10, Jmax: 20, I1: "<r 3>"})
-	require.Equal(t, hiddify.NoiseModeRaw, noise.FakePacket.Mode)
+	require.Equal(t, donutvpn.NoiseModeRaw, noise.FakePacket.Mode)
 	require.Equal(t, []string{"<r 3>"}, noise.FakePacket.Packets)
 	require.False(t, AWGProbeNoise(&option.AwgOptions{}).FakePacket.Enabled)
 }

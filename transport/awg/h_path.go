@@ -15,8 +15,8 @@ import (
 	"github.com/amnezia-vpn/amneziawg-go/v3/device"
 	"github.com/amnezia-vpn/amneziawg-go/v3/tun/netstack"
 	"github.com/sagernet/sing-box/common/interrupt"
-	"github.com/sagernet/sing-box/hiddify/mtusearch"
-	"github.com/sagernet/sing-box/hiddify/peerfallback"
+	"github.com/sagernet/sing-box/donutvpn/mtusearch"
+	"github.com/sagernet/sing-box/donutvpn/peerfallback"
 	"github.com/sagernet/sing/common/logger"
 	N "github.com/sagernet/sing/common/network"
 )

@@ -1,11 +1,11 @@
-# SSH: inbound and Hiddify additions
+# SSH: inbound and DonutVpn additions
 
-[فارسی](ssh.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](ssh.fa.md) · [All DonutVpn features](../../index.md)
 
-Upstream sing-box can only connect to an SSH server. Hiddify adds an SSH server (inbound,
+Upstream sing-box can only connect to an SSH server. DonutVpn adds an SSH server (inbound,
 `"type": "ssh"` in the `inbounds` list), UDP for the SSH outbound through UDP over TCP, and a
 background connection that keeps the outbound ready. The rest of the SSH outbound works as in
-upstream sing-box and is documented there. This page covers only the Hiddify parts.
+upstream sing-box and is documented there. This page covers only the DonutVpn parts.
 
 ## Why use it
 
@@ -37,7 +37,7 @@ slow down or block long or busy SSH sessions. Use it where SSH is allowed.
 - Each forwarded connection is routed like a connection from any other inbound. The user name is
   set, so stats and `auth_user` route rules work. Read and write deadlines work on forwarded
   connections.
-- A forwarded connection to the UDP over TCP address of sing-box carries UDP. So a Hiddify SSH
+- A forwarded connection to the UDP over TCP address of sing-box carries UDP. So a DonutVpn SSH
   outbound with `udp_over_tcp` can send UDP through this server. When `network` does not list
   `udp`, this is turned off.
 
@@ -45,7 +45,7 @@ slow down or block long or busy SSH sessions. Use it where SSH is allowed.
 
 With `udp_over_tcp` turned on, the outbound sends each UDP session inside a forwarded TCP
 connection, in the sing-box UDP over TCP format. The server must understand this format: the
-Hiddify SSH inbound does, a normal OpenSSH server does not.
+DonutVpn SSH inbound does, a normal OpenSSH server does not.
 
 Without `udp_over_tcp`, the outbound does not accept UDP, even when `network` lists `udp`.
 Route UDP to another outbound.

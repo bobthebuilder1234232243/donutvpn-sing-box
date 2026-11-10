@@ -11,7 +11,7 @@ import (
 	E "github.com/sagernet/sing/common/exceptions"
 	M "github.com/sagernet/sing/common/metadata"
 	N "github.com/sagernet/sing/common/network"
-	"github.com/sagernet/wireguard-go/hiddify"
+	"github.com/sagernet/wireguard-go/donutvpn"
 
 	"github.com/flynn/noise"
 	"golang.org/x/crypto/blake2s"
@@ -55,7 +55,7 @@ var (
 
 // WireGuardProbe probes with a WireGuard handshake initiation made with the profile's own keys,
 // after the endpoint's noise packets when it has any, and times the handshake response.
-func WireGuardProbe(dialer N.Dialer, privateKey string, peerPublicKey string, noiseOptions hiddify.NoiseOptions) (Probe, error) {
+func WireGuardProbe(dialer N.Dialer, privateKey string, peerPublicKey string, noiseOptions donutvpn.NoiseOptions) (Probe, error) {
 	private, err := base64.StdEncoding.DecodeString(privateKey)
 	if err != nil || len(private) != 32 {
 		return nil, E.New("WARP scanner: invalid private key")
@@ -74,7 +74,7 @@ func WireGuardProbe(dialer N.Dialer, privateKey string, peerPublicKey string, no
 	}, nil
 }
 
-func wireGuardHandshake(ctx context.Context, dialer N.Dialer, addrPort netip.AddrPort, static noise.DHKey, peer []byte, noiseOptions hiddify.NoiseOptions) (time.Duration, error) {
+func wireGuardHandshake(ctx context.Context, dialer N.Dialer, addrPort netip.AddrPort, static noise.DHKey, peer []byte, noiseOptions donutvpn.NoiseOptions) (time.Duration, error) {
 	ephemeral, err := noise.DH25519.GenerateKeypair(rand.Reader)
 	if err != nil {
 		return 0, err
@@ -152,7 +152,7 @@ func wireGuardHandshake(ctx context.Context, dialer N.Dialer, addrPort netip.Add
 // sendNoise sends the endpoint's fake packets before the initiation, the same ones its WireGuard
 // device sends (FakePacketOptions.Build): on networks that need them, a bare initiation gets no
 // answer.
-func sendNoise(ctx context.Context, conn interface{ Write([]byte) (int, error) }, options hiddify.NoiseOptions) error {
+func sendNoise(ctx context.Context, conn interface{ Write([]byte) (int, error) }, options donutvpn.NoiseOptions) error {
 	packets, err := options.FakePacket.Build()
 	if err != nil {
 		return err

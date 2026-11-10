@@ -25,12 +25,12 @@ import (
 	"github.com/sagernet/sing-box/protocol/direct"
 	"github.com/sagernet/sing-box/protocol/group"
 	"github.com/sagernet/sing-box/protocol/group/balancer"
-	"github.com/sagernet/sing-box/protocol/hiddify/dnstt"
-	"github.com/sagernet/sing-box/protocol/hiddify/gooserelay"
-	"github.com/sagernet/sing-box/protocol/hiddify/hinvalid"
-	"github.com/sagernet/sing-box/protocol/hiddify/masterdns"
-	"github.com/sagernet/sing-box/protocol/hiddify/soar" //H
-	"github.com/sagernet/sing-box/protocol/hiddify/xray"
+	"github.com/sagernet/sing-box/protocol/donutvpn/dnstt"
+	"github.com/sagernet/sing-box/protocol/donutvpn/gooserelay"
+	"github.com/sagernet/sing-box/protocol/donutvpn/hinvalid"
+	"github.com/sagernet/sing-box/protocol/donutvpn/masterdns"
+	"github.com/sagernet/sing-box/protocol/donutvpn/soar" //H
+	"github.com/sagernet/sing-box/protocol/donutvpn/xray"
 	"github.com/sagernet/sing-box/protocol/http"
 	"github.com/sagernet/sing-box/protocol/masque"
 	"github.com/sagernet/sing-box/protocol/mieru"

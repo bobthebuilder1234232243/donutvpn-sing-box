@@ -44,7 +44,7 @@ func switchThreshold(currentDelay uint16, tolerance uint16, ratio float64) uint3
 
 // SelectedThreshold is how much faster another member must be than the selected one, with the
 // result his, to take the selection: switchThreshold for a real ping, none for one cached from
-// the previous run, which decides nothing. hiddify-core shows a spreading balancer's row by the
+// the previous run, which decides nothing. donutvpn-core shows a spreading balancer's row by the
 // same rule.
 func SelectedThreshold(his *adapter.URLTestHistory, tolerance uint16, ratio float64) uint32 {
 	if his != nil && his.IsFromCache {

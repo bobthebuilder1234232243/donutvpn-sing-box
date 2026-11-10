@@ -1,8 +1,8 @@
 // Package secret decrypts values that were encrypted with the build-time key.
 //
-// The key is embedded at build time (CI secret HIDDIFY_SECRET_KEY):
+// The key is embedded at build time (CI secret DONUTVPN_SECRET_KEY):
 //
-//	-ldflags "-X github.com/sagernet/sing-box/hiddify/secret.Key=<base64 AES-256 key>"
+//	-ldflags "-X github.com/sagernet/sing-box/donutvpn/secret.Key=<base64 AES-256 key>"
 //
 // An encrypted value is base64(nonce || AES-256-GCM ciphertext) of "henc:" + plaintext, so it looks
 // like any other base64 value; it counts as encrypted only if it decrypts and starts with the marker.

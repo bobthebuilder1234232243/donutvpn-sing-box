@@ -139,7 +139,7 @@ type ReceivingWorker struct {
 	acklist    *AckList
 	nextNumber uint32
 	windowSize uint32
-	released   bool // Hiddify: set by Release
+	released   bool // DonutVpn: set by Release
 }
 
 func NewReceivingWorker(kcp *Connection) *ReceivingWorker {
@@ -156,7 +156,7 @@ func (w *ReceivingWorker) Release() {
 	w.Lock()
 	buf.ReleaseMulti(w.leftOver)
 	w.leftOver = nil
-	w.released = true // Hiddify: a Read still running must not keep data after this
+	w.released = true // DonutVpn: a Read still running must not keep data after this
 	w.Unlock()
 }
 
@@ -185,7 +185,7 @@ func (w *ReceivingWorker) ProcessSegment(seg *DataSegment) {
 }
 
 func (w *ReceivingWorker) ReadMultiBuffer() buf.MultiBuffer {
-	// Hiddify: leftOver is read under the lock, as Release frees it from another goroutine
+	// DonutVpn: leftOver is read under the lock, as Release frees it from another goroutine
 	w.Lock()
 	defer w.Unlock()
 	if w.leftOver != nil {
@@ -215,7 +215,7 @@ func (w *ReceivingWorker) Read(b []byte) int {
 	}
 	mb, nBytes := buf.SplitBytes(mb, b)
 	if !mb.IsEmpty() {
-		// Hiddify: under the lock, and dropped if the worker was released meanwhile
+		// DonutVpn: under the lock, and dropped if the worker was released meanwhile
 		w.Lock()
 		if w.released {
 			buf.ReleaseMulti(mb)

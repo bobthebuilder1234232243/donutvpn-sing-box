@@ -25,7 +25,7 @@ import (
 func hStartPsiphonBox(t *testing.T, dataDirectory string) (*box.Box, int) {
 	t.Helper()
 	mixedPort := hFreeTCPPort(t)
-	level := os.Getenv("HIDDIFY_LOG")
+	level := os.Getenv("DONUTVPN_LOG")
 	if level == "" {
 		level = "warn"
 	}
@@ -61,8 +61,8 @@ func hTraceThrough(mixedPort int) bool {
 // Once traffic goes through Psiphon, it is ready; a second box started after the first closed
 // (a reload) is ready too.
 func TestH_PsiphonLiveStatus(t *testing.T) {
-	if os.Getenv("HIDDIFY_PSIPHON_E2E") == "" {
-		t.Skip("HIDDIFY_PSIPHON_E2E is not set")
+	if os.Getenv("DONUTVPN_PSIPHON_E2E") == "" {
+		t.Skip("DONUTVPN_PSIPHON_E2E is not set")
 	}
 	dataDirectory := filepath.Join(t.TempDir(), "psiphon")
 	for round := range 2 {

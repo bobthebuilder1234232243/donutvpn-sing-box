@@ -6,7 +6,7 @@ import (
 	"time"
 
 	C "github.com/sagernet/sing-box/constant"
-	"github.com/sagernet/sing-box/hiddify/finalmask"
+	"github.com/sagernet/sing-box/donutvpn/finalmask"
 	M "github.com/sagernet/sing/common/metadata"
 	N "github.com/sagernet/sing/common/network"
 )

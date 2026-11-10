@@ -2,7 +2,7 @@
 
 # REALITY در هیدیفای
 
-[English](reality-hiddify.en.md) · [همهٔ قابلیت‌های هیدیفای](../index.fa.md)
+[English](reality-donutvpn.en.md) · [همهٔ قابلیت‌های هیدیفای](../index.fa.md)
 
 هیدیفای روش ساختن ClientHello در کلاینت REALITY را تغییر داده تا به سرورهای فعلی Xray وصل شود، و یک
 گزینه، `key_share`، به شیء `reality` در بلوک `tls` خروجی افزوده است. این صفحه فقط همین تغییرها را

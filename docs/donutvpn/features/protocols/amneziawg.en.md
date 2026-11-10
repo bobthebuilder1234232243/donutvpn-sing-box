@@ -1,6 +1,6 @@
 # AmneziaWG
 
-[فارسی](amneziawg.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](amneziawg.fa.md) · [All DonutVpn features](../../index.md)
 
 AmneziaWG is WireGuard with obfuscation added. It sends junk packets before the handshake, pads
 the handshake messages with random bytes and replaces the fixed WireGuard message types with your
@@ -33,8 +33,8 @@ blocked or throttled. The encryption is the same as in WireGuard.
 ## How it works
 
 - The endpoint is a full WireGuard device, built on the
-  [AmneziaWG Go library](https://github.com/amnezia-vpn/amneziawg-go) through Hiddify's fork
-  (`github.com/hiddifydeveloper/amneziawg-go`).
+  [AmneziaWG Go library](https://github.com/amnezia-vpn/amneziawg-go) through DonutVpn's fork
+  (`github.com/donutvpndeveloper/amneziawg-go`).
 - Before each handshake initiation it sends the i1–i5 packets (when set), then `jc` junk packets
   with random sizes between `jmin` and `jmax` bytes.
 - The initiation gets `s1` random bytes in front of it and the response gets `s2`. The four
@@ -43,7 +43,7 @@ blocked or throttled. The encryption is the same as in WireGuard.
   packets. `jc`, `jmin`, `jmax` and i1–i5 only affect what one side sends.
 - The endpoint can dial out (a client with one peer) and accept peers (set `listen_port`).
   Connections from a peer are routed like any inbound connection.
-- When the endpoint has started, Hiddify runs a URL test on it right away.
+- When the endpoint has started, DonutVpn runs a URL test on it right away.
 
 ## Configuration
 
@@ -92,7 +92,7 @@ blocked or throttled. The encryption is the same as in WireGuard.
 | `useIntegratedTun` | bool | `false` | Create a real system TUN interface for the tunnel instead of the built-in user-space network stack. |
 | `awg` | object | none | Obfuscation values. See below. |
 | `peers` | list | none | The peers. See below. |
-| `mtu_discovery` | bool | `true` | Find the MTU that gets through the network and the `detour`, as the [WireGuard endpoint](wireguard-hiddify.en.md) does: ICMP echo requests of every size through the tunnel, the largest answered becomes the MTU. `false` keeps `mtu`. Not with `useIntegratedTun`. |
+| `mtu_discovery` | bool | `true` | Find the MTU that gets through the network and the `detour`, as the [WireGuard endpoint](wireguard-donutvpn.en.md) does: ICMP echo requests of every size through the tunnel, the largest answered becomes the MTU. `false` keeps `mtu`. Not with `useIntegratedTun`. |
 | `fallback_address` | list of IPs | none | Other addresses of the only peer, on its port, tried in turn when the one in use gets no handshake, as in the WireGuard endpoint. Needs a single peer given by an IP address. |
 | Dialer fields | | | The usual outbound dialer fields, such as `detour` and `bind_interface`. |
 
@@ -186,7 +186,7 @@ The server needs no change: it ignores the decoy, as it ignores every `i` packet
 
 ### Notes
 
-- The endpoint needs the `with_awg` build tag. Hiddify's builds include it. Without it, starting
+- The endpoint needs the `with_awg` build tag. DonutVpn's builds include it. Without it, starting
   the config fails with "Awg is not included in this build, rebuild with -tags with_awg".
 - Each AmneziaWG endpoint has its own values, so endpoints in one config can talk to servers
   with different settings.
@@ -202,5 +202,5 @@ The server needs no change: it ignores the decoy, as it ignores every `i` packet
 
 ## See also
 
-- [WireGuard: Hiddify additions](wireguard-hiddify.en.md)
+- [WireGuard: DonutVpn additions](wireguard-donutvpn.en.md)
 - [WARP](warp.en.md)

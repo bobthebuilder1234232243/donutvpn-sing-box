@@ -1,6 +1,6 @@
 # Tunnel (reverse tunnel)
 
-[فارسی](tunnel.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](tunnel.fa.md) · [All DonutVpn features](../../index.md)
 
 The tunnel endpoints connect several sing-box instances through one public server, so that a
 machine without a public address (behind NAT or a firewall) can still be reached. The server runs
@@ -143,4 +143,4 @@ Client:
 
 ## See also
 
-- [All Hiddify features](../../index.md)
+- [All DonutVpn features](../../index.md)

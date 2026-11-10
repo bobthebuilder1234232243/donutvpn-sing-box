@@ -12,7 +12,7 @@ import (
 	"github.com/sagernet/sing/common/logger"
 )
 
-// tlsTricks are Hiddify's ClientHello changes (tls_tricks). They are made by the TLS stack, not
+// tlsTricks are DonutVpn's ClientHello changes (tls_tricks). They are made by the TLS stack, not
 // by a finalmask byte mask: the ClientHello is part of the handshake transcript, so editing it on
 // the wire breaks the handshake.
 type tlsTricks struct {

@@ -1,9 +1,9 @@
 # v5 → testing rebase notes
 
 Branch: `v5-rebase` (local only, not pushed)
-Location: `/Users/mnodhe/Documents/programming/hiddify/sing-box-v5`
+Location: `/Users/mnodhe/Documents/programming/donutvpn/sing-box-v5`
 
-Rebased `hiddify/hiddify-sing-box:v5` (205 commits ahead / 454 commits behind at start)
+Rebased `donutvpn/donutvpn-sing-box:v5` (205 commits ahead / 454 commits behind at start)
 onto `SagerNet/sing-box:testing`. 97 commits needed manual conflict resolution after
 patch-id auto-skip of already-applied commits.
 
@@ -20,22 +20,22 @@ patch-id auto-skip of already-applied commits.
    but never assumable without checking.
 
 3. **Two distinct conflict shapes, needing opposite defaults:**
-   - Old upstream commits being replayed → HEAD (hiddify's later work) is almost
+   - Old upstream commits being replayed → HEAD (donutvpn's later work) is almost
      always the superset; discard theirs.
-   - hiddify's *own* commits (`core: extend adapter...`, `feat(protocols): wire...`,
+   - donutvpn's *own* commits (`core: extend adapter...`, `feat(protocols): wire...`,
      `feat(route): wire tunnel routing...`) → these add genuinely new functionality
      not yet present, so the default flips: keep theirs, merge into HEAD's current
      shape. Misapplying the wrong default here would have silently dropped features.
 
-4. **Forward-reference gaps.** Several hiddify commits reference packages/types that
-   don't exist yet at that point in the rebase (`common/monitoring`, `hiddify/ipinfo`,
-   `common/xray/*`, `protocol/hiddify/hinvalid`, MASQUE outbound options) because the
+4. **Forward-reference gaps.** Several donutvpn commits reference packages/types that
+   don't exist yet at that point in the rebase (`common/monitoring`, `donutvpn/ipinfo`,
+   `common/xray/*`, `protocol/donutvpn/hinvalid`, MASQUE outbound options) because the
    commit that *adds* them hasn't been replayed yet. Every such gap had to be verified
    as "expected, lands later" via `git log -S<symbol>` against the full commit range,
    not just patched around.
 
 5. **Submodule conflicts.** `replace/wireguard-go` and `replace/tailscale` are git
-   submodules pointing at hiddify's own forks. Git can't 3-way-merge submodule pointer
+   submodules pointing at donutvpn's own forks. Git can't 3-way-merge submodule pointer
    conflicts automatically ("commits don't follow merge-base") — each one needed manual
    ancestry checking (`git merge-base --is-ancestor`) across divergent fork branches to
    pick the right commit, sometimes discovering the target commit didn't even have the
@@ -56,9 +56,9 @@ patch-id auto-skip of already-applied commits.
 
 - `gvisor.dev/gvisor` module-cache duplicate-package error (protocol/awg, transport/awg)
 - `github.com/kianmhz/GooseRelayVPN/goose` subpackage missing from that module version
-- `replace/wireguard-go` (hiddify's fork) lacks `SetEndpointResolverFunc` / `FakePackets`
+- `replace/wireguard-go` (donutvpn's fork) lacks `SetEndpointResolverFunc` / `FakePackets`
   that `transport/wireguard/endpoint.go` expects — fork hasn't caught up to what a
-  later, not-yet-replayed hiddify commit assumes
+  later, not-yet-replayed donutvpn commit assumes
 - `protocol/psiphon` → `Psiphon-Labs/quic-go` declares its own module path as
   `lucas-clemente/quic-go`, a known upstream metadata quirk
 

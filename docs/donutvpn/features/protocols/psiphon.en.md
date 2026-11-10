@@ -1,6 +1,6 @@
 # Psiphon
 
-[فارسی](psiphon.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](psiphon.fa.md) · [All DonutVpn features](../../index.md)
 
 The Psiphon outbound connects to the Psiphon network through the official Psiphon tunnel core,
 built into sing-box. Psiphon runs the servers, so you only need this outbound. It is an
@@ -31,7 +31,7 @@ server it knows is blocked and it cannot fetch a new list.
   `data_directory`, and starts the tunnel core in the background. Startup does not wait for the
   tunnel.
 - Until the tunnel is up, the outbound shows "Connecting..." and connections through it fail.
-  When the first tunnel is up, the mark goes away, and Hiddify's
+  When the first tunnel is up, the mark goes away, and DonutVpn's
   [monitoring](../groups/monitoring.en.md) tests it at once.
 - The tunnel core makes its own connections to Psiphon servers. These go through this
   outbound's dial settings (for example `detour`), through a local SOCKS bridge, so they do
@@ -59,7 +59,7 @@ server it knows is blocked and it cannot fetch a new list.
 
 | Field | Type | Default | Meaning |
 |---|---|---|---|
-| `config` | string | `""` | A Psiphon config to start from. `"hiddify"` uses the config built into the Hiddify app, if this build has one; otherwise a warning is logged and the defaults are used. Any other value is the Psiphon JSON config, either encrypted with this build's key or in base64. Empty means the defaults. |
+| `config` | string | `""` | A Psiphon config to start from. `"donutvpn"` uses the config built into the DonutVpn app, if this build has one; otherwise a warning is logged and the defaults are used. Any other value is the Psiphon JSON config, either encrypted with this build's key or in base64. Empty means the defaults. |
 | `data_directory` | string | `"data/psiphon"` | Where Psiphon keeps its data: each outbound in a folder named after its tag. |
 | `egress_region` | string | `""` | Two-letter country code of the exit server, for example `"US"` or `"DE"`. Empty lets Psiphon choose. |
 | `propagation_channel_id` | string | `"FFFFFFFFFFFFFFFF"` | Psiphon client identity value. |

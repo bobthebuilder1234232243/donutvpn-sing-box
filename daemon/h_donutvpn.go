@@ -1,6 +1,6 @@
 package daemon
 
-// Hiddify accessors (//H): hiddify-core reads these to reach the running box's
+// DonutVpn accessors (//H): donutvpn-core reads these to reach the running box's
 // context-scoped services (monitoring, URL test history, cache file).
 
 import (

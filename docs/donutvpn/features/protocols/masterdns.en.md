@@ -1,6 +1,6 @@
 # MasterDNS
 
-[فارسی](masterdns.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](masterdns.fa.md) · [All DonutVpn features](../../index.md)
 
 MasterDNS carries your TCP connections inside DNS queries and answers, through public DNS
 resolvers, to a [MasterDnsVPN](https://github.com/masterking32/MasterDnsVPN) server that you run.
@@ -126,7 +126,7 @@ log shows a warning.
 
 Every other setting of the MasterDnsVPN client keeps the default of its sample configuration.
 The client's own resolver finder (`client_resolvers.txt` with ranges) is replaced by `resolvers`.
-hiddify-core's ray2sing reads two links into this outbound: `masterdns://`, which carries the same
+donutvpn-core's ray2sing reads two links into this outbound: `masterdns://`, which carries the same
 fields, and the `dnst://` URL of the dnst URL spec (`dnst://v.example.com/masterdns/socks?mkey=…&encryption=5`),
 where the `socks` backend is this outbound alone and any other backend sets `mode: tcp` with that
 outbound in front. It also reads the `masterdns://` profile link of WhiteDNS (base64url JSON,

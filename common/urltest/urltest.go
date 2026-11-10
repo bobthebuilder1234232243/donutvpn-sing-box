@@ -88,7 +88,7 @@ func (s *HistoryStorage) StoreURLTestHistory(tag string, history *adapter.URLTes
 	return history
 }
 
-// AddOnlyIpToHistory is a placeholder until per-history IP info (hiddify/ipinfo) lands;
+// AddOnlyIpToHistory is a placeholder until per-history IP info (donutvpn/ipinfo) lands;
 // it currently just ensures a history entry exists without overwriting the delay/time.
 func (s *HistoryStorage) AddOnlyIpToHistory(tag string, history *adapter.URLTestHistory) {
 	s.access.Lock()

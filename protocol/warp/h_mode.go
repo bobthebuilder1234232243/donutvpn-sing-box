@@ -9,10 +9,10 @@ import (
 
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/common/dialer"
-	"github.com/sagernet/sing-box/hiddify/warpscan"
+	"github.com/sagernet/sing-box/donutvpn/warpscan"
 	"github.com/sagernet/sing-box/option"
 	E "github.com/sagernet/sing/common/exceptions"
-	"github.com/sagernet/wireguard-go/hiddify"
+	"github.com/sagernet/wireguard-go/donutvpn"
 )
 
 // The tunnels of a warp endpoint (option mode). In auto mode the endpoint makes one handshake
@@ -402,7 +402,7 @@ func (w *WARPEndpoint) raceModes(done <-chan struct{}) string {
 		w.logger.ErrorContext(w.ctx, err)
 		return ""
 	}
-	for mode, noise := range map[string]hiddify.NoiseOptions{
+	for mode, noise := range map[string]donutvpn.NoiseOptions{
 		modeWireGuard: w.options.Noise,
 		modeAWG:       warpscan.AWGProbeNoise(w.options.AWG),
 	} {

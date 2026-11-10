@@ -5,7 +5,7 @@ import (
 	"net/netip"
 	"time"
 
-	"github.com/sagernet/sing-box/hiddify/peerfallback"
+	"github.com/sagernet/sing-box/donutvpn/peerfallback"
 	"github.com/sagernet/wireguard-go/conn"
 )
 

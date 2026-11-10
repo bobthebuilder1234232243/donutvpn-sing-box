@@ -1,7 +1,7 @@
 // Package masterdns is the masterdns outbound: a MasterDnsVPN client that carries TCP connections
 // inside DNS queries to a MasterDnsVPN server, through public DNS resolvers.
 //
-// The client (masterdnsvpn-go/lib, the Hiddify fork of MasterDnsVPN) tests the resolvers, agrees
+// The client (masterdnsvpn-go/lib, the DonutVpn fork of MasterDnsVPN) tests the resolvers, agrees
 // on an MTU with the server, opens one session and multiplexes the connections over it with its
 // own reliable delivery (ARQ). This outbound only maps the options, runs the client and turns each
 // connection into a stream.

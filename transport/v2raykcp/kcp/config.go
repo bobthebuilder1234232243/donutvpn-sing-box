@@ -1,4 +1,4 @@
-// Hiddify: Xray's mKCP config as a plain struct (Xray's is generated from protobuf), with the
+// DonutVpn: Xray's mKCP config as a plain struct (Xray's is generated from protobuf), with the
 // same fields and helpers. Under the Mozilla Public License 2.0, as Xray.
 
 package kcp

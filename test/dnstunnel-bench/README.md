@@ -1,7 +1,7 @@
 # DNS tunnel benchmark
 
 `run.sh` measures the `dnstt`, `masterdns` and `soar` outbounds through rate-limited local resolvers,
-with and without the [smart resolver pool](../../docs/hiddify/features/dns/smart-dns-pool.en.md).
+with and without the [smart resolver pool](../../docs/donutvpn/features/dns/smart-dns-pool.en.md).
 Everything runs on the loopback: no internet, no root.
 
 ```bash

@@ -1,10 +1,10 @@
 # Mieru
 
-[فارسی](mieru.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](mieru.fa.md) · [All DonutVpn features](../../index.md)
 
 Mieru is a proxy protocol from the [mieru project](https://github.com/enfein/mieru). Every byte it
 sends is encrypted, with random padding, so the traffic has no fixed header or pattern to match.
-It runs over TCP or UDP. In a config it is the outbound `"type": "mieru"`; Hiddify also has a
+It runs over TCP or UDP. In a config it is the outbound `"type": "mieru"`; DonutVpn also has a
 `mieru` inbound for running a server.
 
 ## Why use it
@@ -101,4 +101,4 @@ If `listen_port` is set, `portBindings` must hold exactly one binding with the s
 
 ## See also
 
-- [All Hiddify features](../../index.md)
+- [All DonutVpn features](../../index.md)

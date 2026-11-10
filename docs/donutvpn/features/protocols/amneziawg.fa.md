@@ -35,7 +35,7 @@ DPI ترافیک WireGuard را از بستهٔ اولش می‌شناسد: یک
 
 - این endpoint یک دستگاه کامل WireGuard است که روی
   [کتابخانهٔ Go پروژهٔ AmneziaWG](https://github.com/amnezia-vpn/amneziawg-go) و از طریق فورک
-  هیدیفای (`github.com/hiddifydeveloper/amneziawg-go`) ساخته شده.
+  هیدیفای (`github.com/donutvpndeveloper/amneziawg-go`) ساخته شده.
 - پیش از هر پیام شروع دست‌دادن، اول بسته‌های i1 تا i5 (اگر تنظیم شده باشند) و بعد `jc` بستهٔ
   بی‌معنی با اندازهٔ تصادفی بین `jmin` و `jmax` بایت فرستاده می‌شود.
 - جلوی پیام شروع `s1` بایت تصادفی و جلوی پاسخ `s2` بایت تصادفی می‌آید. چهار نوع پیام با مقادیر
@@ -93,7 +93,7 @@ DPI ترافیک WireGuard را از بستهٔ اولش می‌شناسد: یک
 | `useIntegratedTun` | bool | `false` | به‌جای پشتهٔ شبکهٔ داخلی، یک رابط TUN واقعی در سیستم برای تونل می‌سازد. |
 | `awg` | object | ندارد | مقادیر پنهان‌سازی. پایین‌تر را ببینید. |
 | `peers` | فهرست | ندارد | peerها. پایین‌تر را ببینید. |
-| `mtu_discovery` | bool | `true` | MTUی را پیدا می‌کند که از شبکه و `detour` می‌گذرد، مثل [endpoint ‏WireGuard](wireguard-hiddify.fa.md): درخواست‌های ICMP echo از هر اندازه از درون تونل، و بزرگ‌ترین پاسخ‌گرفته MTU می‌شود. `false` همان `mtu` را نگه می‌دارد. با `useIntegratedTun` نه. |
+| `mtu_discovery` | bool | `true` | MTUی را پیدا می‌کند که از شبکه و `detour` می‌گذرد، مثل [endpoint ‏WireGuard](wireguard-donutvpn.fa.md): درخواست‌های ICMP echo از هر اندازه از درون تونل، و بزرگ‌ترین پاسخ‌گرفته MTU می‌شود. `false` همان `mtu` را نگه می‌دارد. با `useIntegratedTun` نه. |
 | `fallback_address` | فهرست IP | ندارد | نشانی‌های دیگر تنها peer، روی پورت خودش، که وقتی نشانی در حال استفاده دست‌دادنی نگیرد به نوبت امتحان می‌شوند، مثل endpoint ‏WireGuard. یک peer که با نشانی IP داده شده لازم دارد. |
 | فیلدهای dialer | | | فیلدهای معمول dialer خروجی، مثل `detour` و `bind_interface`. |
 
@@ -201,7 +201,7 @@ Initial کلاینت QUIC v1 برای دامنهٔ `id` می‌شود: یک Clie
 
 ## همچنین ببینید
 
-- [WireGuard: افزوده‌های هیدیفای](wireguard-hiddify.fa.md)
+- [WireGuard: افزوده‌های هیدیفای](wireguard-donutvpn.fa.md)
 - [WARP](warp.fa.md)
 
 </div>

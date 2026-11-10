@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/sagernet/sing-box/adapter"
-	"github.com/sagernet/sing-box/hiddify/peerfallback"
+	"github.com/sagernet/sing-box/donutvpn/peerfallback"
 	"github.com/sagernet/sing/common/logger"
 	M "github.com/sagernet/sing/common/metadata"
 	N "github.com/sagernet/sing/common/network"

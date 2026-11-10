@@ -1,6 +1,6 @@
 # Smart resolver pool
 
-[فارسی](smart-dns-pool.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](smart-dns-pool.fa.md) · [All DonutVpn features](../../index.md)
 
 The smart resolver pool is the resolver handling that every DNS tunnel outbound shares: the
 [DNSTT](../protocols/dnstt.en.md), [MasterDNS](../protocols/masterdns.en.md) and
@@ -145,7 +145,7 @@ throttled or blocked, by spreading the load and leaving out the ones that stop w
 | `probe_interval` | duration | `5s` | How often a down resolver is checked. |
 | `down_after` | int | `8` | Timeouts or network errors in a row before a resolver is down. |
 | `duplicate` | int | dnstt: `2`; masterdns: its `packet_duplication`, else `3` | How many times each query may be sent, copies included; the pool sends as many as carry data. The copies go only to resolvers without a rate limit, and every answer reaches the tunnel. |
-| `discovery` | object | | How "auto" resolvers are found, the same for DNSTT, MasterDNS and Soar: `country` (ISO code of the device's network; hiddify-core fills it from the app's region), `sample_ranges` (addresses of the country's ranges to try last, default 0), `want` (working resolvers to keep: 10 for the pool, 16 for Soar's client), `concurrency` (tests at once: 100 for the pool, 16 for Soar's client), `pace` (least gap between two tests: none for the pool, `20ms` for Soar's client). |
+| `discovery` | object | | How "auto" resolvers are found, the same for DNSTT, MasterDNS and Soar: `country` (ISO code of the device's network; donutvpn-core fills it from the app's region), `sample_ranges` (addresses of the country's ranges to try last, default 0), `want` (working resolvers to keep: 10 for the pool, 16 for Soar's client), `concurrency` (tests at once: 100 for the pool, 16 for Soar's client), `pace` (least gap between two tests: none for the pool, `20ms` for Soar's client). |
 
 The resolvers themselves are the outbound's `resolvers`: `host:port` or `host` for UDP,
 `tcp://host:port`, `dot://host:853`, `https://host/dns-query`, and `auto`.

@@ -1,5 +1,5 @@
 // Test doubles for the DNS router, carried over from upstream's dns/router_test.go, which
-// sing-box 1.15 removed; hiddify's router tests still use them. //H
+// sing-box 1.15 removed; donutvpn's router tests still use them. //H
 package dns
 
 import (

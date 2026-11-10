@@ -1,6 +1,6 @@
 # Donut Vpn sing-box
 
-The core of [Donut Vpn](https://github.com/hiddify/hiddify-app): [sing-box](https://github.com/SagerNet/sing-box)
+The core of [Donut Vpn](https://github.com/donutvpn/donutvpn-app): [sing-box](https://github.com/SagerNet/sing-box)
 (v1.15) with the protocols, transports and fixes that make it work on censored networks.
 
 **Documentation:** [docs/donutvpn](docs/donutvpn/index.md) · [فارسی](docs/donutvpn/index.fa.md). Every
@@ -32,7 +32,7 @@ its changes small and close to upstream so it can follow every sing-box release.
   endpoint registers devices and takes a link's device as `masque.device`.
 - [AmneziaWG](docs/donutvpn/features/protocols/amneziawg.en.md): AmneziaWG 3.1, with the QUIC
   masquerade.
-- [WireGuard additions](docs/donutvpn/features/protocols/wireguard-hiddify.en.md): noise before
+- [WireGuard additions](docs/donutvpn/features/protocols/wireguard-donutvpn.en.md): noise before
   handshakes (random, QUIC Initials, AmneziaWG-style DNS, QUIC and SIP templates), socket recovery,
   per-peer users.
 - [WireGuard outbound (legacy format)](docs/donutvpn/features/protocols/wireguard-legacy.en.md).
@@ -65,7 +65,7 @@ its changes small and close to upstream so it can follow every sing-box release.
   [rmux](docs/donutvpn/features/transports/rmux.en.md).
 - [TLS fragment](docs/donutvpn/features/tls-fragment.en.md),
   [TLS tricks](docs/donutvpn/features/tls-tricks.en.md),
-  [REALITY additions](docs/donutvpn/features/reality-hiddify.en.md) (post-quantum key share,
+  [REALITY additions](docs/donutvpn/features/reality-donutvpn.en.md) (post-quantum key share,
   `key_share`, fragmentation, Firefox 148 and Safari 26.3 fingerprints),
   [PROXY protocol](docs/donutvpn/features/proxy-protocol.en.md).
 
@@ -91,14 +91,14 @@ its changes small and close to upstream so it can follow every sing-box release.
 ### Fixes
 
 Many crash, leak and stability fixes on top of sing-box, each with its commit:
-[bug-fix log](docs/donutvpn/bugfix/v5.en.md). What hiddify-app and hiddify-core need to know:
+[bug-fix log](docs/donutvpn/bugfix/v5.en.md). What donutvpn-app and donutvpn-core need to know:
 [app considerations](docs/donutvpn/app_considerations.md).
 
 ## Building
 
 ```bash
-git clone --recursive https://github.com/hiddify/hiddify-sing-box
-cd hiddify-sing-box
+git clone --recursive https://github.com/donutvpn/donutvpn-sing-box
+cd donutvpn-sing-box
 make          # Go 1.27.3 or newer
 ```
 
@@ -113,7 +113,7 @@ Read [AGENTS.md](AGENTS.md) first; it holds for people and AI agents alike. In s
 Donut Vpn docs, keep changes to upstream files small (`h_*.go` files, `//H` on changed lines),
 improve an existing feature rather than add an overlapping one, test, document in English and
 Persian, list the feature here, and rebase on the latest `v5` before opening a pull request. The
-step-by-step procedure is the [hiddify-feature skill](.agents/skills/hiddify-feature/SKILL.md).
+step-by-step procedure is the [donutvpn-feature skill](.agents/skills/donutvpn-feature/SKILL.md).
 
 ## Credits
 

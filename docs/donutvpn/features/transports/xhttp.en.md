@@ -1,6 +1,6 @@
 # XHTTP transport
 
-[فارسی](xhttp.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](xhttp.fa.md) · [All DonutVpn features](../../index.md)
 
 XHTTP is Xray's HTTP transport. It carries a proxy connection as ordinary HTTP requests and
 responses: one long download response, and the upload either as many small requests or as one
@@ -12,7 +12,7 @@ a VLESS, VMess or Trojan inbound or outbound with `"type": "xhttp"`.
 - It works through CDNs and reverse proxies (nginx, Caddy) that pass plain HTTP but break
   WebSocket or gRPC.
 - It connects to Xray servers that use XHTTP, so you can use the same server for Xray and
-  Hiddify clients.
+  DonutVpn clients.
 - It can split upload and download across different addresses or CDNs (`download`).
 
 ## How it gets past filtering
@@ -156,6 +156,6 @@ when the config loads.
 
 ## See also
 
-- [REALITY in Hiddify](../reality-hiddify.en.md)
+- [REALITY in DonutVpn](../reality-donutvpn.en.md)
 - [VLESS encryption](../protocols/vless-encryption.en.md)
 - [finalmask](finalmask.en.md)

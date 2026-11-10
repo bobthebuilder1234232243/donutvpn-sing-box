@@ -3,7 +3,7 @@ package option
 import "github.com/sagernet/sing/common/json"
 
 // H: FinalMaskOptions is an Xray-style finalmask ({"tcp":[...],"udp":[...]}), applied to every
-// connection the dialer opens; see hiddify/finalmask for the supported mask types.
+// connection the dialer opens; see donutvpn/finalmask for the supported mask types.
 type FinalMaskOptions struct {
 	TCP []FinalMaskItem `json:"tcp,omitempty"`
 	UDP []FinalMaskItem `json:"udp,omitempty"`

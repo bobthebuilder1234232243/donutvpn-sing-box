@@ -80,6 +80,6 @@
 
 - [تکه‌تکه کردن TLS](tls-fragment.fa.md)
 - [finalmask](transports/finalmask.fa.md)
-- [REALITY در هیدیفای](reality-hiddify.fa.md)
+- [REALITY در هیدیفای](reality-donutvpn.fa.md)
 
 </div>

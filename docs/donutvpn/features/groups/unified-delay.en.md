@@ -1,6 +1,6 @@
 # Unified delay
 
-[فارسی](unified-delay.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](unified-delay.fa.md) · [All DonutVpn features](../../index.md)
 
 With unified delay, a URL test measures one HTTP round trip over a connection that is already
 open, instead of the time to open the connection and get the first answer. It is a switch in

@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sagernet/sing-box/hiddify/warpscan"
+	"github.com/sagernet/sing-box/donutvpn/warpscan"
 	"github.com/sagernet/sing-box/option"
 	"github.com/sagernet/sing/common/json/badoption"
 

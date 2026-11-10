@@ -26,7 +26,7 @@ func (hHeaderReader) NewConnectionEx(ctx context.Context, conn net.Conn, source 
 
 // A client that opens the download (GET) and goes away before it uploads anything: the handler
 // read the header from the upload queue forever, and the GET handler with its connection never
-// ended (issue hiddify-core#163).
+// ended (issue donutvpn-core#163).
 func TestH_XHTTPServerStreamDownClientGone(t *testing.T) {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()

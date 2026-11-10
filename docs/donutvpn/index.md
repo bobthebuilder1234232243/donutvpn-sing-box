@@ -1,15 +1,15 @@
-# Hiddify sing-box
+# DonutVpn sing-box
 
 [فارسی](index.fa.md)
 
-Features and fixes in the Hiddify fork that upstream sing-box does not have. Each feature page has
+Features and fixes in the DonutVpn fork that upstream sing-box does not have. Each feature page has
 an English and a Persian version.
 
 ## Features
 
 - [TLS fragment](features/tls-fragment.en.md): split the ClientHello into small pieces with pauses, so DPI cannot read the server name.
 - [TLS tricks](features/tls-tricks.en.md): a mixed-case server name and a padding extension in the ClientHello.
-- [REALITY in Hiddify](features/reality-hiddify.en.md): the post-quantum key share, the `key_share` option, and fragmentation on REALITY.
+- [REALITY in DonutVpn](features/reality-donutvpn.en.md): the post-quantum key share, the `key_share` option, and fragmentation on REALITY.
 - [PROXY protocol](features/proxy-protocol.en.md): inbounds read the PROXY protocol header and the direct outbound sends it.
 
 ## Protocols
@@ -18,7 +18,7 @@ an English and a Persian version.
 - [WARP scanner and noise](features/protocols/warp-scanner.en.md): how the endpoint scanner, the noise modes and presets (DNS, QUIC, SIP, random), the noise search and auto mode find a way through.
 - [WARP over MASQUE](features/protocols/warp-masque.en.md): the standalone `masque` outbound for WARP over HTTP/3, HTTP/2 or both, with a device enrolled elsewhere; to register one, use the `warp` endpoint with `mode` `masque`; for a self-hosted MASQUE server, use upstream `masque-client`.
 - [AmneziaWG](features/protocols/amneziawg.en.md): WireGuard with junk packets, padded handshakes and custom message types that defeat WireGuard fingerprinting.
-- [WireGuard: Hiddify additions](features/protocols/wireguard-hiddify.en.md): noise packets before handshakes, per-peer user names, socket recovery and UDP fragmentation on by default.
+- [WireGuard: DonutVpn additions](features/protocols/wireguard-donutvpn.en.md): noise packets before handshakes, per-peer user names, socket recovery and UDP fragmentation on by default.
 - [WireGuard outbound (legacy format)](features/protocols/wireguard-legacy.en.md): the old WireGuard outbound that upstream removed, kept so old configs still load.
 - [VLESS encryption](features/protocols/vless-encryption.en.md): Xray's post-quantum VLESS encryption, with Vision over it even without TLS.
 - [Sudoku](features/protocols/sudoku.en.md): an encrypted TCP proxy that sends its bytes as sudoku clues, so traffic looks like text or has low randomness, with optional HTTP tunnels (build tag `with_sudoku`).
@@ -58,13 +58,13 @@ an English and a Persian version.
 
 - [Balancer](features/groups/balancer.en.md): spread connections over members by round robin, lowest delay, consistent hashing, sticky sessions or a sticky pool.
 - [Fallback](features/groups/fallback.en.md): try members in order and skip one that failed for a while.
-- [URL test: Hiddify additions](features/groups/urltest.en.md): more test URLs, a `failover` mode, and a move to another member on the first failed connection.
+- [URL test: DonutVpn additions](features/groups/urltest.en.md): more test URLs, a `failover` mode, and a move to another member on the first failed connection.
 - [Monitoring](features/groups/monitoring.en.md): background tests of every outbound for delay and exit IP, which feed the groups.
 - [Unified delay](features/groups/unified-delay.en.md): URL tests time one HTTP round trip on an open connection, so delays compare across protocols.
 
 ## For app developers
 
-- [App considerations](app_considerations.md): what hiddify-app and hiddify-core need to change or know because of the v5 work.
+- [App considerations](app_considerations.md): what donutvpn-app and donutvpn-core need to change or know because of the v5 work.
 
 ## Bug fixes
 

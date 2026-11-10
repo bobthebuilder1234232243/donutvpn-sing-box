@@ -10,7 +10,7 @@ import (
 	"time"
 
 	box "github.com/sagernet/sing-box"
-	"github.com/sagernet/sing-box/hiddify/finalmask"
+	"github.com/sagernet/sing-box/donutvpn/finalmask"
 	"github.com/sagernet/sing-box/include"
 	"github.com/sagernet/sing-box/option"
 	"github.com/sagernet/sing/common/json"

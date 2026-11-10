@@ -12,14 +12,14 @@ import (
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/common/dialer"
 	C "github.com/sagernet/sing-box/constant"
-	"github.com/sagernet/sing-box/hiddify/warpscan"
+	"github.com/sagernet/sing-box/donutvpn/warpscan"
 	"github.com/sagernet/sing-box/log"
 	"github.com/sagernet/sing-box/option"
 	E "github.com/sagernet/sing/common/exceptions"
 	N "github.com/sagernet/sing/common/network"
 	"github.com/sagernet/sing/service"
 	"github.com/sagernet/sing/service/pause"
-	"github.com/sagernet/wireguard-go/hiddify"
+	"github.com/sagernet/wireguard-go/donutvpn"
 )
 
 // With the scanner enabled, WARP keeps a score for each endpoint on each network (see
@@ -241,7 +241,7 @@ func (w *WARPEndpoint) innerOptions() option.WARPEndpointOptions {
 
 // probeNoise is what the device sends before a handshake with the noise preset (empty for the
 // configured noise), for the probe: the WireGuard noise, or AmneziaWG's special and junk packets.
-func (w *WARPEndpoint) probeNoise(presetName string) hiddify.NoiseOptions {
+func (w *WARPEndpoint) probeNoise(presetName string) donutvpn.NoiseOptions {
 	preset, isPreset := warpscan.NoisePresetByName(presetName)
 	if w.activeMode() == modeAWG {
 		awg := w.options.AWG

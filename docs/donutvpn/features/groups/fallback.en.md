@@ -1,6 +1,6 @@
 # Fallback
 
-[فارسی](fallback.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](fallback.fa.md) · [All DonutVpn features](../../index.md)
 
 The fallback group tries its members in order and uses the first one that connects. A member
 that fails is set aside for a while, so a dead server does not slow down every connection. It is

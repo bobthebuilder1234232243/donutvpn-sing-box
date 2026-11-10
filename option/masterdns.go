@@ -7,7 +7,7 @@ import (
 // MasterDNSOptions configure the masterdns outbound: a MasterDnsVPN client that carries TCP
 // connections inside DNS queries to a MasterDnsVPN server, through public resolvers. Every field
 // that is unset keeps the MasterDnsVPN client's default, documented in
-// docs/hiddify/features/protocols/masterdns.en.md.
+// docs/donutvpn/features/protocols/masterdns.en.md.
 type MasterDNSOptions struct {
 	DialerOptions
 

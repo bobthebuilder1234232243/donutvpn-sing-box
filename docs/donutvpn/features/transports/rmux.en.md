@@ -1,6 +1,6 @@
 # rmux multiplexing
 
-[فارسی](rmux.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](rmux.fa.md) · [All DonutVpn features](../../index.md)
 
 rmux is one more protocol for sing-box multiplexing: `"multiplex": {"protocol": "rmux"}` on an
 outbound. Like `smux`, `yamux` and `h2mux`, it carries many connections inside one connection to
@@ -36,7 +36,7 @@ network sees.
 }
 ```
 
-The server's inbound needs `"multiplex": {"enabled": true}` and Hiddify's sing-box: it accepts
+The server's inbound needs `"multiplex": {"enabled": true}` and DonutVpn's sing-box: it accepts
 rmux like the other protocols, and an upstream sing-box server refuses it. The other
 `multiplex` fields work as for the other protocols. No build tag is needed.
 

@@ -1,6 +1,6 @@
 # VLESS encryption
 
-[فارسی](vless-encryption.fa.md) · [All Hiddify features](../../index.md)
+[فارسی](vless-encryption.fa.md) · [All DonutVpn features](../../index.md)
 
 VLESS encryption is Xray's encryption layer for VLESS, `mlkem768x25519plus`. It encrypts the
 VLESS stream with keys agreed through a hybrid post-quantum handshake (ML-KEM-768 and X25519), so
@@ -89,12 +89,12 @@ Parts of the string, separated by dots:
 Keys and complete strings can be made with Xray's `xray vlessenc` command. A string with a wrong
 prefix, mode, RTT value or key length is a configuration error.
 
-Vision: in Hiddify, `flow: "xtls-rprx-vision"` on the outbound also works over VLESS encryption
+Vision: in DonutVpn, `flow: "xtls-rprx-vision"` on the outbound also works over VLESS encryption
 with no TLS or REALITY; it needs one of the two. With `random` mode Vision does not splice
 (copy directly between sockets). When `multiplex` is enabled, the flow is turned off, since Vision
 cannot run over a multiplexed connection.
 
 ## See also
 
-- [REALITY in Hiddify](../reality-hiddify.en.md)
+- [REALITY in DonutVpn](../reality-donutvpn.en.md)
 - [XHTTP transport](../transports/xhttp.en.md)

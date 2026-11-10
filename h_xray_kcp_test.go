@@ -31,7 +31,7 @@ func TestH_XrayKCP(t *testing.T) {
 		old := strings.HasPrefix(version, "26.3.") // 26.3 names the mkcp masks one by one
 		for _, mask := range []struct{ name, xray, singBox string }{
 			{"plain", ``, ``},
-			{"aes128gcm", hOldNew(old, `, "finalmask": {"udp": [{"type": "mkcp-aes128gcm", "settings": {"password": "hiddify"}}]}`, `, "finalmask": {"udp": [{"type": "mkcp-legacy", "settings": {"value": "hiddify"}}]}`), `, "finalmask": {"udp": [{"type": "mkcp-legacy", "settings": {"value": "hiddify"}}]}`},
+			{"aes128gcm", hOldNew(old, `, "finalmask": {"udp": [{"type": "mkcp-aes128gcm", "settings": {"password": "donutvpn"}}]}`, `, "finalmask": {"udp": [{"type": "mkcp-legacy", "settings": {"value": "donutvpn"}}]}`), `, "finalmask": {"udp": [{"type": "mkcp-legacy", "settings": {"value": "donutvpn"}}]}`},
 			{"wechat", hOldNew(old, `, "finalmask": {"udp": [{"type": "header-wechat"}]}`, `, "finalmask": {"udp": [{"type": "mkcp-legacy", "settings": {"header": "wechat"}}]}`), `, "finalmask": {"udp": [{"type": "mkcp-legacy", "settings": {"header": "wechat"}}]}`},
 			// since 26.10: the client sends mKCP in DNS queries to the server as its resolver; an mKCP
 			// segment fits in a reply only with EDNS0 on both sides
