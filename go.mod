@@ -322,11 +322,11 @@ replace github.com/Psiphon-Labs/quic-go => ./replace/psiphon-quic-go
 
 replace github.com/Psiphon-Labs/psiphon-tls => ./replace/psiphon-tls
 
-replace github.com/net2share/vaydns => github.com/donutvpn/vaydns v0.0.0-20260401180616-890dc987a6a9
+replace github.com/net2share/vaydns => github.com/bobthebuilder1234232243/donutvpn-vaydns v0.0.0-20260401180616-890dc987a6a9
 
-replace github.com/kianmhz/GooseRelayVPN => github.com/donutvpn/GooseRelayVPN v0.0.0-20260429125124-0e68c2a3ae4c
+replace github.com/kianmhz/GooseRelayVPN => github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN v0.0.0-20260429125124-0e68c2a3ae4c
 
-// MasterDnsVPN with a library API (lib/): github.com/donutvpn/MasterDnsVPN, branch donutvpn
+// MasterDnsVPN with a library API (lib/): github.com/bobthebuilder1234232243/donutvpn-MasterDnsVPN, branch donutvpn
 replace masterdnsvpn-go => ./replace/MasterDnsVPN
 
 replace github.com/getlantern/soar => ./replace/soar
