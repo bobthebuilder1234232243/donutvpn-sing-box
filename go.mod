@@ -338,3 +338,6 @@ replace github.com/sagernet/sing-mux => ./replace/sing-mux
 replace github.com/metacubex/utls => github.com/Leadaxe/utls-lx v1.8.8-0.20261011005638-ad69b191e2f8
 
 replace github.com/sagernet/sing => ./replace/sing
+
+replace github.com/net2share/vaydns => github.com/bobthebuilder1234232243/donutvpn-vaydns v0.0.0-20260401180616-890dc987a6a9
+replace github.com/kianmhz/GooseRelayVPN => github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN v0.0.0-20260429125124-0e68c2a3ae4c
