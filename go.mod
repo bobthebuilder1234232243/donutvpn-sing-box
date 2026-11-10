@@ -33,7 +33,6 @@ require (
 	github.com/gofrs/uuid/v5 v5.5.1
 	github.com/google/go-cmp v0.7.0
 	github.com/google/uuid v1.6.0
-	github.com/bobthebuilder1234232243/donutvpn-hmrd_multi_resolver_dns v0.0.0-20261110051929-c5fc975e975c
 	github.com/insomniacslk/dhcp v0.0.0-20260220084031-5adc3eb26f91
 	github.com/jsimonetti/rtnetlink v1.4.1
 	github.com/keybase/go-keychain v0.0.1
@@ -322,11 +321,8 @@ replace github.com/Psiphon-Labs/quic-go => ./replace/psiphon-quic-go
 
 replace github.com/Psiphon-Labs/psiphon-tls => ./replace/psiphon-tls
 
-replace github.com/net2share/vaydns => github.com/bobthebuilder1234232243/donutvpn-vaydns v0.0.0-20260401180616-890dc987a6a9
 
-replace github.com/kianmhz/GooseRelayVPN => github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN v0.0.0-20260429125124-0e68c2a3ae4c
 
-// MasterDnsVPN with a library API (lib/): github.com/bobthebuilder1234232243/donutvpn-MasterDnsVPN, branch donutvpn
 replace masterdnsvpn-go => ./replace/MasterDnsVPN
 
 replace github.com/getlantern/soar => ./replace/soar
