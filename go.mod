@@ -49,7 +49,6 @@ require (
 	github.com/metacubex/utls v1.8.7
 	github.com/mholt/acmez/v3 v3.1.6
 	github.com/miekg/dns v1.1.73
-	github.com/net2share/vaydns v0.2.8
 	github.com/openai/openai-go/v3 v3.26.0
 	github.com/oschwald/geoip2-golang v1.13.0
 	github.com/oschwald/maxminddb-golang v1.13.1
@@ -339,5 +338,4 @@ replace github.com/metacubex/utls => github.com/Leadaxe/utls-lx v1.8.8-0.2026101
 
 replace github.com/sagernet/sing => ./replace/sing
 
-replace github.com/net2share/vaydns => github.com/bobthebuilder1234232243/donutvpn-vaydns v0.0.0-20260401180616-890dc987a6a9
 replace github.com/kianmhz/GooseRelayVPN => github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN v0.0.0-20260429125124-0e68c2a3ae4c
