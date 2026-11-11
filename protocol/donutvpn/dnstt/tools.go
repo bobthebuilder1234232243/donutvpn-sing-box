@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	dnstt "github.com/net2share/vaydns/client"
+	dnstt "github.com/bobthebuilder1234232243/donutvpn-vaydns/client"
 	"github.com/sagernet/sing-box/common/dnspool"
 	"github.com/sagernet/sing-box/option"
 )

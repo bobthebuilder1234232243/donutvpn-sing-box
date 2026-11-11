@@ -323,6 +323,3 @@ require (
 
 
 
-replace github.com/kianmhz/GooseRelayVPN => github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN v1.7.1
-replace github.com/net2share/vaydns => github.com/bobthebuilder1234232243/donutvpn-vaydns v0.2.8
-replace github.com/bepass-org/warp-plus => github.com/bobthebuilder1234232243/donutvpn-warp-plus v1.2.6
