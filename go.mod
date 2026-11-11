@@ -339,6 +339,6 @@ replace (
 	github.com/sagernet/psiphon-tls => ./replace/psiphon-tls
 	github.com/sagernet/psiphon-quic-go => ./replace/psiphon-quic-go
 	github.com/sagernet/MasterDnsVPN => ./replace/MasterDnsVPN
-	github.com/sagernet/amneza-awg-go => ./replace/amneziawg-go
+	github.com/sagernet/amneziawg-go => ./replace/amneziawg-go
 	github.com/sagernet/soar => ./replace/soar
 )
