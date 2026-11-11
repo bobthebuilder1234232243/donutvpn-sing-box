@@ -294,6 +294,7 @@ require (
 	layeh.com/gopher-luar v1.0.11 // indirect
 	tailscale.com v1.58.2 // indirect
 	zombiezen.com/go/capnproto2 v2.18.2+incompatible // indirect
+)
 replace (
 	github.com/sagernet/wireguard-go => ./replace/wireguard-go
 	github.com/kianmhz/GooseRelayVPN => ./replace/GooseRelayVPN
@@ -310,3 +311,4 @@ replace (
 	github.com/sagernet/MasterDnsVPN => ./replace/MasterDnsVPN
 	github.com/sagernet/amneziawg-go => ./replace/amneziawg-go
 	github.com/sagernet/soar => ./replace/soar
+)
