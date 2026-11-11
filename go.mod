@@ -1,8 +1,11 @@
 module github.com/sagernet/sing-box
+
 go 1.27
+
 // MPTCP only where tcp_multi_path asks for it: Go 1.24+ listens on MPTCP by default, and the
 // Linux kernel let a remote root listen on IPv4 MPTCP.
 godebug multipathtcp=0
+
 require (
 	filippo.io/edwards25519 v1.2.0
 	github.com/Diniboy1123/connect-ip-go v0.0.0-20260613064811-66cba32d7d33
@@ -30,9 +33,11 @@ require (
 	github.com/gofrs/uuid/v5 v5.5.1
 	github.com/google/go-cmp v0.7.0
 	github.com/google/uuid v1.6.0
+	github.com/hiddify/hmrd_multi_resolver_dns v0.0.0-20261102140835-72045bdb2631
 	github.com/insomniacslk/dhcp v0.0.0-20260220084031-5adc3eb26f91
 	github.com/jsimonetti/rtnetlink v1.4.1
 	github.com/keybase/go-keychain v0.0.1
+	github.com/kianmhz/GooseRelayVPN v0.0.0-20260429125124-0e68c2a3ae4c
 	github.com/klauspost/cpuid/v2 v2.4.2
 	github.com/kulikov0/headless-client v0.1.0
 	github.com/libdns/acmedns v0.5.0
@@ -45,6 +50,7 @@ require (
 	github.com/metacubex/utls v1.8.7
 	github.com/mholt/acmez/v3 v3.1.6
 	github.com/miekg/dns v1.1.73
+	github.com/net2share/vaydns v0.2.8
 	github.com/openai/openai-go/v3 v3.26.0
 	github.com/oschwald/geoip2-golang v1.13.0
 	github.com/oschwald/maxminddb-golang v1.13.1
@@ -110,6 +116,9 @@ require (
 	google.golang.org/protobuf v1.36.12
 	howett.net/plist v1.0.1
 	lukechampine.com/blake3 v1.4.1
+	masterdnsvpn-go v0.0.0
+)
+
 require (
 	filippo.io/bigmod v0.0.1 // indirect
 	filippo.io/keygen v0.0.0-20230306160926-5201437acf8e // indirect
@@ -141,6 +150,7 @@ require (
 	github.com/cheekybits/genny v0.0.0-20170328200008-9127e812e1e9 // indirect
 	github.com/clipperhouse/uax29/v2 v2.2.0 // indirect
 	github.com/cloudflare/circl v1.6.4 // indirect
+	github.com/cognusion/go-cache-lru v0.0.0-20170419142635-f73e2280ecea // indirect
 	github.com/coreos/go-iptables v0.7.1-0.20240112124308-65c67c9f46e6 // indirect
 	github.com/coreos/go-oidc/v3 v3.17.0 // indirect
 	github.com/database64128/netx-go v0.1.1 // indirect
@@ -295,6 +305,26 @@ require (
 	tailscale.com v1.58.2 // indirect
 	zombiezen.com/go/capnproto2 v2.18.2+incompatible // indirect
 )
+
+
+
+
+
+
+
+
+
+
+
+// MasterDnsVPN with a library API (lib/): github.com/hiddify/MasterDnsVPN, branch hiddify
+
+
+
+
+
+
+
+
 replace (
 	github.com/sagernet/wireguard-go => ./replace/wireguard-go
 	github.com/kianmhz/GooseRelayVPN => ./replace/GooseRelayVPN
@@ -309,6 +339,6 @@ replace (
 	github.com/sagernet/psiphon-tls => ./replace/psiphon-tls
 	github.com/sagernet/psiphon-quic-go => ./replace/psiphon-quic-go
 	github.com/sagernet/MasterDnsVPN => ./replace/MasterDnsVPN
-	github.com/sagernet/amneziawg-go => ./replace/amneziawg-go
+	github.com/sagernet/amneza-awg-go => ./replace/amneziawg-go
 	github.com/sagernet/soar => ./replace/soar
 )
