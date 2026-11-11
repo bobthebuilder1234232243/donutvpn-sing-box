@@ -36,7 +36,6 @@ require (
 	github.com/insomniacslk/dhcp v0.0.0-20260220084031-5adc3eb26f91
 	github.com/jsimonetti/rtnetlink v1.4.1
 	github.com/keybase/go-keychain v0.0.1
-	github.com/kianmhz/GooseRelayVPN v0.0.0-20260429125124-0e68c2a3ae4c
 	github.com/klauspost/cpuid/v2 v2.4.2
 	github.com/kulikov0/headless-client v0.1.0
 	github.com/libdns/acmedns v0.5.0
@@ -338,3 +337,7 @@ replace github.com/metacubex/utls => github.com/Leadaxe/utls-lx v1.8.8-0.2026101
 
 replace github.com/sagernet/sing => ./replace/sing
 
+
+replace github.com/net2share/vaydns => github.com/bobthebuilder1234232243/donutvpn-vaydns main
+replace github.com/kianmhz/GooseRelayVPN => github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN main
+replace github.com/bepass-org/warp-plus => github.com/bobthebuilder1234232243/donutvpn-warp-plus main
