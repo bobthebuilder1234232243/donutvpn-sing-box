@@ -322,8 +322,13 @@ require (
 
 
 
+)
+
 replace (
 	github.com/sagernet/wireguard-go => ./replace/wireguard-go
+	github.com/kianmhz/GooseRelayVPN => ./replace/GooseRelayVPN
+	github.com/net2share/vaydns => ./replace/vaydns
+	github.com/bepass-org/warp-plus => ./replace/warp-plus
 	github.com/sagernet/sing => ./replace/sing
 	github.com/sagernet/sing-tun => ./replace/sing-tun
 	github.com/sagernet/sing-mux => ./replace/sing-mux
@@ -335,7 +340,4 @@ replace (
 	github.com/sagernet/MasterDnsVPN => ./replace/MasterDnsVPN
 	github.com/sagernet/amneziawg-go => ./replace/amneziawg-go
 	github.com/sagernet/soar => ./replace/soar
-	github.com/kianmhz/GooseRelayVPN => ./replace/GooseRelayVPN
-	github.com/net2share/vaydns => ./replace/vaydns
-	github.com/bepass-org/warp-plus => ./replace/warp-plus
 )
