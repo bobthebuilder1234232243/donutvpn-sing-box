@@ -1,11 +1,8 @@
 module github.com/sagernet/sing-box
-
 go 1.27
-
 // MPTCP only where tcp_multi_path asks for it: Go 1.24+ listens on MPTCP by default, and the
 // Linux kernel let a remote root listen on IPv4 MPTCP.
 godebug multipathtcp=0
-
 require (
 	filippo.io/edwards25519 v1.2.0
 	github.com/Diniboy1123/connect-ip-go v0.0.0-20260613064811-66cba32d7d33
@@ -113,8 +110,6 @@ require (
 	google.golang.org/protobuf v1.36.12
 	howett.net/plist v1.0.1
 	lukechampine.com/blake3 v1.4.1
-)
-
 require (
 	filippo.io/bigmod v0.0.1 // indirect
 	filippo.io/keygen v0.0.0-20230306160926-5201437acf8e // indirect
@@ -299,31 +294,6 @@ require (
 	layeh.com/gopher-luar v1.0.11 // indirect
 	tailscale.com v1.58.2 // indirect
 	zombiezen.com/go/capnproto2 v2.18.2+incompatible // indirect
-)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-)
-
 replace (
 	github.com/sagernet/wireguard-go => ./replace/wireguard-go
 	github.com/kianmhz/GooseRelayVPN => ./replace/GooseRelayVPN
@@ -340,4 +310,3 @@ replace (
 	github.com/sagernet/MasterDnsVPN => ./replace/MasterDnsVPN
 	github.com/sagernet/amneziawg-go => ./replace/amneziawg-go
 	github.com/sagernet/soar => ./replace/soar
-)
