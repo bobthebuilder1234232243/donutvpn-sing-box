@@ -338,6 +338,3 @@ replace github.com/metacubex/utls => github.com/Leadaxe/utls-lx v1.8.8-0.2026101
 replace github.com/sagernet/sing => ./replace/sing
 
 
-replace github.com/net2share/vaydns => github.com/bobthebuilder1234232243/donutvpn-vaydns main
-replace github.com/kianmhz/GooseRelayVPN => github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN main
-replace github.com/bepass-org/warp-plus => github.com/bobthebuilder1234232243/donutvpn-warp-plus main
