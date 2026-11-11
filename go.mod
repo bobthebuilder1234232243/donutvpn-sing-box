@@ -146,7 +146,6 @@ require (
 	github.com/cheekybits/genny v0.0.0-20170328200008-9127e812e1e9 // indirect
 	github.com/clipperhouse/uax29/v2 v2.2.0 // indirect
 	github.com/cloudflare/circl v1.6.4 // indirect
-	github.com/cognusion/go-cache-lru v0.0.0-20170419142635-f73e2280ecea // indirect
 	github.com/coreos/go-iptables v0.7.1-0.20240112124308-65c67c9f46e6 // indirect
 	github.com/coreos/go-oidc/v3 v3.17.0 // indirect
 	github.com/database64128/netx-go v0.1.1 // indirect
@@ -322,3 +321,21 @@ require (
 
 
 
+
+replace (
+	github.com/sagernet/wireguard-go => ./replace/wireguard-go
+	github.com/sagernet/sing => ./replace/sing
+	github.com/sagernet/sing-tun => ./replace/sing-tun
+	github.com/sagernet/sing-mux => ./replace/sing-mux
+	github.com/sagernet/sing-vmess => ./replace/sing-vmess
+	github.com/sagernet/tailscale => ./replace/tailscale
+	github.com/sagernet/gvisor => ./replace/gvisor
+	github.com/sagernet/psiphon-tls => ./replace/psiphon-tls
+	github.com/sagernet/psiphon-quic-go => ./replace/psiphon-quic-go
+	github.com/sagernet/MasterDnsVPN => ./replace/MasterDnsVPN
+	github.com/sagernet/amneziawg-go => ./replace/amneziawg-go
+	github.com/sagernet/soar => ./replace/soar
+	github.com/kianmhz/GooseRelayVPN => ./replace/GooseRelayVPN
+	github.com/net2share/vaydns => ./replace/vaydns
+	github.com/bepass-org/warp-plus => ./replace/warp-plus
+)
