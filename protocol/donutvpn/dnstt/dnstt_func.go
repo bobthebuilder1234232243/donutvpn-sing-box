@@ -114,7 +114,9 @@ func (c *Outbound) createDnsttTunnel(ctx context.Context, resolver []dnstt.Resol
 		return nil, err
 	}
 
-	tunnel, err := dnstt.NewTunnel(resolver, tServer)
+	// One tunnel carries one resolver connection; with several to choose from, pick one at random
+	// (the same rotation OpenStreamSingleResolver uses).
+	tunnel, err := dnstt.NewTunnel(resolver[rand.Intn(len(resolver))], tServer)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create tunnel: %w", err)
 	}

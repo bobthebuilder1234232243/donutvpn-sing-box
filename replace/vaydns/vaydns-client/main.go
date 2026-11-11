@@ -13,10 +13,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/net2share/vaydns/client"
-	"github.com/net2share/vaydns/dns"
-	"github.com/net2share/vaydns/noise"
-	"github.com/net2share/vaydns/turbotunnel"
+	"github.com/bobthebuilder1234232243/donutvpn-vaydns/client"
+	"github.com/bobthebuilder1234232243/donutvpn-vaydns/dns"
+	"github.com/bobthebuilder1234232243/donutvpn-vaydns/noise"
+	"github.com/bobthebuilder1234232243/donutvpn-vaydns/turbotunnel"
 	log "github.com/sirupsen/logrus"
 )
 

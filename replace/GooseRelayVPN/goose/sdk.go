@@ -15,8 +15,8 @@ import (
 	"context"
 	"net"
 
-	"github.com/kianmhz/GooseRelayVPN/internal/carrier"
-	"github.com/kianmhz/GooseRelayVPN/internal/socks"
+	"github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN/internal/carrier"
+	"github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN/internal/socks"
 )
 
 // Config and FrontingConfig are aliased so callers can construct them without

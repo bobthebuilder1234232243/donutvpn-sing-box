@@ -8,8 +8,8 @@ import (
 	"net"
 	"strings"
 
-	"github.com/kianmhz/GooseRelayVPN/internal/config"
-	"github.com/kianmhz/GooseRelayVPN/internal/exit"
+	"github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN/internal/config"
+	"github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN/internal/exit"
 )
 
 func main() {

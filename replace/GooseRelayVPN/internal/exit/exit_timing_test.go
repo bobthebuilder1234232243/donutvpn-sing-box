@@ -12,8 +12,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/kianmhz/GooseRelayVPN/internal/frame"
-	"github.com/kianmhz/GooseRelayVPN/internal/session"
+	"github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN/internal/frame"
+	"github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN/internal/session"
 )
 
 const exitTimingTestKeyHex = "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"

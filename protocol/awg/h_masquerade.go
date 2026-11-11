@@ -6,7 +6,7 @@ import (
 
 	"github.com/sagernet/sing-box/option"
 	E "github.com/sagernet/sing/common/exceptions"
-	"github.com/sagernet/wireguard-go/hiddify"
+	"github.com/sagernet/wireguard-go/donutvpn"
 )
 
 // masqueradeDomain is a plain DNS name: the domain is written inside an i-packet tag, so nothing

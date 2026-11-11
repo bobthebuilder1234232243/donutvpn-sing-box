@@ -1,4 +1,4 @@
-module github.com/kianmhz/GooseRelayVPN
+module github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN
 
 go 1.22
 

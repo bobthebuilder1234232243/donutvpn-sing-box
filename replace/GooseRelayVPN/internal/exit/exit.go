@@ -16,8 +16,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/kianmhz/GooseRelayVPN/internal/frame"
-	"github.com/kianmhz/GooseRelayVPN/internal/session"
+	"github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN/internal/frame"
+	"github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN/internal/session"
 	"golang.org/x/net/proxy"
 )
 

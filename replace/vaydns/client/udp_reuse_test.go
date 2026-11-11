@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/net2share/vaydns/turbotunnel"
+	"github.com/bobthebuilder1234232243/donutvpn-vaydns/turbotunnel"
 )
 
 // With ReuseSockets a worker keeps one socket: the worker moves on when its

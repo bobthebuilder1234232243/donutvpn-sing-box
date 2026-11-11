@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/kianmhz/GooseRelayVPN/internal/frame"
+	"github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN/internal/frame"
 )
 
 func benchSID(b byte) [frame.SessionIDLen]byte {

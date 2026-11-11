@@ -16,6 +16,9 @@ require (
 	github.com/amnezia-vpn/amneziawg-go/v3 v3.1.20260828
 	github.com/anthropics/anthropic-sdk-go v1.26.0
 	github.com/biter777/countries v1.7.5
+	github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN v0.0.0-20261111044016-e5a932c41b2a
+	github.com/bobthebuilder1234232243/donutvpn-hmrd_multi_resolver_dns v0.0.0-20261111044122-2c0a75d3909f
+	github.com/bobthebuilder1234232243/donutvpn-vaydns v0.0.0-20261111044039-eb6f3f8ab190
 	github.com/caddyserver/certmagic v0.25.3-0.20260421143802-60d9d8b415d6
 	github.com/caddyserver/zerossl v0.1.5
 	github.com/coder/websocket v1.8.14
@@ -33,11 +36,9 @@ require (
 	github.com/gofrs/uuid/v5 v5.5.1
 	github.com/google/go-cmp v0.7.0
 	github.com/google/uuid v1.6.0
-	github.com/hiddify/hmrd_multi_resolver_dns v0.0.0-20261102140835-72045bdb2631
 	github.com/insomniacslk/dhcp v0.0.0-20260220084031-5adc3eb26f91
 	github.com/jsimonetti/rtnetlink v1.4.1
 	github.com/keybase/go-keychain v0.0.1
-	github.com/kianmhz/GooseRelayVPN v0.0.0-20260429125124-0e68c2a3ae4c
 	github.com/klauspost/cpuid/v2 v2.4.2
 	github.com/kulikov0/headless-client v0.1.0
 	github.com/libdns/acmedns v0.5.0
@@ -50,7 +51,6 @@ require (
 	github.com/metacubex/utls v1.8.7
 	github.com/mholt/acmez/v3 v3.1.6
 	github.com/miekg/dns v1.1.73
-	github.com/net2share/vaydns v0.2.8
 	github.com/openai/openai-go/v3 v3.26.0
 	github.com/oschwald/geoip2-golang v1.13.0
 	github.com/oschwald/maxminddb-golang v1.13.1
@@ -116,7 +116,7 @@ require (
 	google.golang.org/protobuf v1.36.12
 	howett.net/plist v1.0.1
 	lukechampine.com/blake3 v1.4.1
-	masterdnsvpn-go v0.0.0
+	masterdnsvpn-go v0.0.0-00010101000000-000000000000
 )
 
 require (
@@ -306,39 +306,40 @@ require (
 	zombiezen.com/go/capnproto2 v2.18.2+incompatible // indirect
 )
 
+replace github.com/Diniboy1123/connect-ip-go => github.com/shtorm-7/connect-ip-go v1.0.0-extended-1.1.1
 
+replace github.com/sagernet/sing-dns => github.com/shtorm-7/sing-dns v0.4.6-extended-1.0.0
 
+replace github.com/ameshkov/dnscrypt/v2 => github.com/shtorm-7/dnscrypt/v2 v2.4.0-extended-1.0.0
 
+replace github.com/metacubex/utls => github.com/Leadaxe/utls-lx v1.8.8-0.20261011005638-ad69b191e2f8
 
+replace github.com/sagernet/wireguard-go => ./replace/wireguard-go
 
+replace github.com/bepass-org/warp-plus => ./replace/warp-plus
 
+replace github.com/sagernet/sing => ./replace/sing
 
+replace github.com/sagernet/sing-tun => ./replace/sing-tun
 
+replace github.com/sagernet/sing-mux => ./replace/sing-mux
 
+replace github.com/sagernet/sing-vmess => ./replace/sing-vmess
 
-// MasterDnsVPN with a library API (lib/): github.com/hiddify/MasterDnsVPN, branch hiddify
+replace github.com/sagernet/tailscale => ./replace/tailscale
 
+replace github.com/sagernet/gvisor => ./replace/gvisor
 
+replace github.com/Psiphon-Labs/psiphon-tls => ./replace/psiphon-tls
 
+replace github.com/Psiphon-Labs/quic-go => ./replace/psiphon-quic-go
 
+replace masterdnsvpn-go => ./replace/MasterDnsVPN
 
+replace github.com/amnezia-vpn/amneziawg-go/v3 => ./replace/amneziawg-go
 
+replace github.com/getlantern/soar => ./replace/soar
 
+replace github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN => ./replace/GooseRelayVPN
 
-replace (
-	github.com/sagernet/wireguard-go => ./replace/wireguard-go
-	github.com/kianmhz/GooseRelayVPN => ./replace/GooseRelayVPN
-	github.com/net2share/vaydns => ./replace/vaydns
-	github.com/bepass-org/warp-plus => ./replace/warp-plus
-	github.com/sagernet/sing => ./replace/sing
-	github.com/sagernet/sing-tun => ./replace/sing-tun
-	github.com/sagernet/sing-mux => ./replace/sing-mux
-	github.com/sagernet/sing-vmess => ./replace/sing-vmess
-	github.com/sagernet/tailscale => ./replace/tailscale
-	github.com/sagernet/gvisor => ./replace/gvisor
-	github.com/sagernet/psiphon-tls => ./replace/psiphon-tls
-	github.com/sagernet/psiphon-quic-go => ./replace/psiphon-quic-go
-	github.com/sagernet/MasterDnsVPN => ./replace/MasterDnsVPN
-	github.com/sagernet/amneziawg-go => ./replace/amneziawg-go
-	github.com/sagernet/soar => ./replace/soar
-)
+replace github.com/bobthebuilder1234232243/donutvpn-vaydns => ./replace/vaydns

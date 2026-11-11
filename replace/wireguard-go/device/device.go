@@ -18,7 +18,7 @@ import (
 	"github.com/sagernet/sing/service/pause"
 	"github.com/sagernet/wireguard-go/conn"
 	"github.com/sagernet/wireguard-go/device/awg"
-	"github.com/sagernet/wireguard-go/hiddify"
+	"github.com/sagernet/wireguard-go/donutvpn"
 	"github.com/sagernet/wireguard-go/ipc"
 	"github.com/sagernet/wireguard-go/ratelimiter"
 	"github.com/sagernet/wireguard-go/rwcancel"
@@ -141,7 +141,7 @@ type Device struct {
 	log        *Logger
 	timerPause *timerPauseManager
 
-	HNoise hiddify.NoiseOptions //H
+	HNoise donutvpn.NoiseOptions //H
 
 	version Version
 	awg     awg.Protocol
