@@ -2,7 +2,7 @@ package wireguard
 
 import (
 	"context"
-	donutvpn "github.com/sagernet/wireguard-go/donutvpn"
+	donutvpn "github.com/sagernet/wireguard-go/hiddify"
 	"net/netip"
 	"time"
 

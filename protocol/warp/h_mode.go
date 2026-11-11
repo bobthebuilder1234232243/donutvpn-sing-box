@@ -12,7 +12,7 @@ import (
 	"github.com/sagernet/sing-box/donutvpn/warpscan"
 	"github.com/sagernet/sing-box/option"
 	E "github.com/sagernet/sing/common/exceptions"
-	"github.com/sagernet/wireguard-go/donutvpn"
+	"github.com/sagernet/wireguard-go/hiddify"
 )
 
 // The tunnels of a warp endpoint (option mode). In auto mode the endpoint makes one handshake

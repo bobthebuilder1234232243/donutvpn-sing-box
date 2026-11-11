@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/sagernet/sing-box/option"
-	"github.com/sagernet/wireguard-go/donutvpn"
+	"github.com/sagernet/wireguard-go/hiddify"
 
 	"github.com/stretchr/testify/require"
 )

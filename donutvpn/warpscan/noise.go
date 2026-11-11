@@ -2,7 +2,7 @@ package warpscan
 
 import (
 	"github.com/sagernet/sing-box/option"
-	"github.com/sagernet/wireguard-go/donutvpn"
+	"github.com/sagernet/wireguard-go/hiddify"
 )
 
 // NoisePreset is a named noise of donutvpn.NoisePresets, with what the WARP endpoint and its

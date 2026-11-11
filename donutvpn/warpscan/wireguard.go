@@ -11,7 +11,7 @@ import (
 	E "github.com/sagernet/sing/common/exceptions"
 	M "github.com/sagernet/sing/common/metadata"
 	N "github.com/sagernet/sing/common/network"
-	"github.com/sagernet/wireguard-go/donutvpn"
+	"github.com/sagernet/wireguard-go/hiddify"
 
 	"github.com/flynn/noise"
 	"golang.org/x/crypto/blake2s"

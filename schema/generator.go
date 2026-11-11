@@ -5,7 +5,7 @@ import (
 	"encoding"
 	stdjson "encoding/json"
 	xbadoption "github.com/sagernet/sing-box/common/xray/json/badoption"
-	donutvpn "github.com/sagernet/wireguard-go/donutvpn"
+	donutvpn "github.com/sagernet/wireguard-go/hiddify"
 	"net/netip"
 	"reflect"
 	"slices"

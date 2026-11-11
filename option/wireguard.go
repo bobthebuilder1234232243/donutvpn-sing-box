@@ -5,7 +5,7 @@ import (
 
 	C "github.com/sagernet/sing-box/constant"
 	"github.com/sagernet/sing/common/json/badoption"
-	donutvpn "github.com/sagernet/wireguard-go/donutvpn"
+	donutvpn "github.com/sagernet/wireguard-go/hiddify"
 )
 
 type WireGuardEndpointOptions struct {

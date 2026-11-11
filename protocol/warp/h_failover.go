@@ -19,7 +19,7 @@ import (
 	N "github.com/sagernet/sing/common/network"
 	"github.com/sagernet/sing/service"
 	"github.com/sagernet/sing/service/pause"
-	"github.com/sagernet/wireguard-go/donutvpn"
+	"github.com/sagernet/wireguard-go/hiddify"
 )
 
 // With the scanner enabled, WARP keeps a score for each endpoint on each network (see
