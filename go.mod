@@ -306,42 +306,24 @@ require (
 	zombiezen.com/go/capnproto2 v2.18.2+incompatible // indirect
 )
 
-replace github.com/sagernet/sing-vmess => ./replace/sing-vmess
 
-replace github.com/Diniboy1123/connect-ip-go => github.com/shtorm-7/connect-ip-go v1.0.0-extended-1.1.1
 
-replace github.com/sagernet/sing-dns => github.com/shtorm-7/sing-dns v0.4.6-extended-1.0.0
 
-replace github.com/ameshkov/dnscrypt/v2 => github.com/shtorm-7/dnscrypt/v2 v2.4.0-extended-1.0.0
 
-replace github.com/sagernet/wireguard-go => ./replace/wireguard-go
 
-replace github.com/sagernet/tailscale => ./replace/tailscale
 
-replace github.com/Psiphon-Labs/quic-go => ./replace/psiphon-quic-go
 
-replace github.com/Psiphon-Labs/psiphon-tls => ./replace/psiphon-tls
 
-replace github.com/net2share/vaydns => github.com/hiddify/vaydns v0.0.0-20260401180616-890dc987a6a9
 
-replace github.com/kianmhz/GooseRelayVPN => github.com/hiddify/GooseRelayVPN v0.0.0-20260429125124-0e68c2a3ae4c
 
 // MasterDnsVPN with a library API (lib/): github.com/hiddify/MasterDnsVPN, branch hiddify
-replace masterdnsvpn-go => ./replace/MasterDnsVPN
 
-replace github.com/getlantern/soar => ./replace/soar
 
-replace github.com/amnezia-vpn/amneziawg-go/v3 => ./replace/amneziawg-go
 
-replace github.com/sagernet/sing-tun => ./replace/sing-tun
 
-replace github.com/sagernet/gvisor => ./replace/gvisor
 
-replace github.com/sagernet/sing-mux => ./replace/sing-mux
 
-replace github.com/metacubex/utls => github.com/Leadaxe/utls-lx v1.8.8-0.20261011005638-ad69b191e2f8
 
-replace github.com/sagernet/sing => ./replace/sing
 
 replace (
 	github.com/sagernet/wireguard-go => ./replace/wireguard-go
