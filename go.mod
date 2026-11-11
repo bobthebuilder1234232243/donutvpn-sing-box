@@ -113,7 +113,6 @@ require (
 	google.golang.org/protobuf v1.36.12
 	howett.net/plist v1.0.1
 	lukechampine.com/blake3 v1.4.1
-	masterdnsvpn-go v0.0.0
 )
 
 require (
