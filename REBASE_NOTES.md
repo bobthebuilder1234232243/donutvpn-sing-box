@@ -55,7 +55,7 @@ patch-id auto-skip of already-applied commits.
 ## Known remaining gaps (pre-existing, not introduced by this rebase)
 
 - `gvisor.dev/gvisor` module-cache duplicate-package error (protocol/awg, transport/awg)
-- `github.com/kianmhz/GooseRelayVPN/goose` subpackage missing from that module version
+- `github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN/goose` subpackage missing from that module version
 - `replace/wireguard-go` (donutvpn's fork) lacks `SetEndpointResolverFunc` / `FakePackets`
   that `transport/wireguard/endpoint.go` expects — fork hasn't caught up to what a
   later, not-yet-replayed donutvpn commit assumes
