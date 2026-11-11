@@ -15,7 +15,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN/goose"
+	"github.com/kianmhz/GooseRelayVPN/goose"
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/adapter/outbound"
 	C "github.com/sagernet/sing-box/constant"

@@ -303,38 +303,26 @@ require (
 	zombiezen.com/go/capnproto2 v2.18.2+incompatible // indirect
 )
 
-replace github.com/sagernet/sing-vmess => ./replace/sing-vmess
-
-replace github.com/Diniboy1123/connect-ip-go => github.com/shtorm-7/connect-ip-go v1.0.0-extended-1.1.1
-
-replace github.com/sagernet/sing-dns => github.com/shtorm-7/sing-dns v0.4.6-extended-1.0.0
-
-replace github.com/ameshkov/dnscrypt/v2 => github.com/shtorm-7/dnscrypt/v2 v2.4.0-extended-1.0.0
-
-replace github.com/sagernet/wireguard-go => ./replace/wireguard-go
-
-replace github.com/sagernet/tailscale => ./replace/tailscale
-
-replace github.com/Psiphon-Labs/quic-go => ./replace/psiphon-quic-go
-
-replace github.com/Psiphon-Labs/psiphon-tls => ./replace/psiphon-tls
 
 
 
-replace masterdnsvpn-go => ./replace/MasterDnsVPN
-
-replace github.com/getlantern/soar => ./replace/soar
-
-replace github.com/amnezia-vpn/amneziawg-go/v3 => ./replace/amneziawg-go
-
-replace github.com/sagernet/sing-tun => ./replace/sing-tun
-
-replace github.com/sagernet/gvisor => ./replace/gvisor
-
-replace github.com/sagernet/sing-mux => ./replace/sing-mux
-
-replace github.com/metacubex/utls => github.com/Leadaxe/utls-lx v1.8.8-0.20261011005638-ad69b191e2f8
-
-replace github.com/sagernet/sing => ./replace/sing
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+replace github.com/kianmhz/GooseRelayVPN => github.com/bobthebuilder1234232243/donutvpn-GooseRelayVPN v1.7.1
+replace github.com/net2share/vaydns => github.com/bobthebuilder1234232243/donutvpn-vaydns v0.2.8
+replace github.com/bepass-org/warp-plus => github.com/bobthebuilder1234232243/donutvpn-warp-plus v1.2.6
